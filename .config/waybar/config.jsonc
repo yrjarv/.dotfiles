@@ -35,16 +35,15 @@
   },
   "battery": {
     "bat": "BAT0",
-    "interval": 60,
+    "interval": 1,
     "states": {
       "warning": 30,
       "critical": 15
     },
-    "format": "{capacity}% {icon}",
     "format-icons": ["", "", "", "", ""],
     "max-length": 25,
-    "format-charging": "🔌 {capacity}%",
-    "format-discharging": "🔋 {capacity}%",
+    "format-charging": "{capacity}%",
+    "format-discharging": "🔋{capacity}%",
     "format-full": "Stationary"
   },
   "clock#simpleclock": {
