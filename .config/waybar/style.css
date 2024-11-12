@@ -56,6 +56,7 @@ window#waybar {
   padding: 0.3em 0.6em;
   border-radius: 4px;
   margin: 5px 4px;
+  color: #ffffff;
   /* background-color: #181825; */
   /* background-color: #9399b2; */
 }
@@ -64,41 +65,6 @@ window#waybar.empty #window {
   background-color: transparent;
 }
 
-#battery {
-  color: #00ff00;
-}
-
-#cpu {
-  color: #94e2d5;
-}
-
-#memory {
-  color: #cba6f7;
-}
-
-#clock {
-  color: #74c7ec;
-}
-
-#clock.simpleclock {
-  color: #89b4fa;
-}
-
-#window {
-  color: #a6e3a1;
-}
-
-#pulseaudio {
-  color: #b4befe;
-}
-
-#pulseaudio.muted {
-  color: #a6adc8;
-}
-
-#custom-keyboard {
-  color: #ff0000;
-}
 
 tooltip {
   background-color: #181825;
