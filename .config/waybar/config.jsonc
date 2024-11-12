@@ -34,12 +34,18 @@
     "spacing": 10
   },
   "battery": {
+    "bat": "BAT0",
+    "interval": 60,
     "states": {
       "warning": 30,
       "critical": 15
     },
-    "format": "Battery: {capacity}%",
-    "format-full": "y@arch2"
+    "format": "{capacity}% {icon}",
+    "format-icons": ["", "", "", "", ""],
+    "max-length": 25,
+    "format-charging": "🔌 {capacity}%",
+    "format-discharging": "🔋 {capacity}%",
+    "format-full": "Stationary"
   },
   "clock#simpleclock": {
     "tooltip": false,
