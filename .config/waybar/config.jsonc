@@ -1,23 +1,27 @@
 {
   "layer": "bottom",
-  "position": "top",
+  "position": "bottom",
   "height": 40,
   "spacing": 2,
   "exclusive": true,
   "gtk-layer-shell": true,
   "passthrough": false,
   "fixed-center": true,
-  "modules-left": ["hyprland/workspaces", "hyprland/window"],
-  "modules-center": [],
-  "modules-right": [
-    "custom/keyboard",
+  "modules-left": [
+    "hyprland/workspaces",
+    "hyprland/window",
+    "custom/keyboard"
+  ],
+  "modules-center": [
     "cpu",
     "memory",
+    "battery"
+  ],
+  "modules-right": [
     "pulseaudio",
     "clock",
     "clock#simpleclock",
-    "tray",
-    "battery"
+    "tray"
   ],
   "hyprland/workspaces": {
     "on-click": "activate",
@@ -33,6 +37,7 @@
     "show-passive-items": true,
     "spacing": 10
   },
+
   "battery": {
     "bat": "BAT0",
     "interval": 1,
@@ -42,9 +47,9 @@
     },
     "format-icons": ["", "", "", "", ""],
     "max-length": 25,
-    "format-charging": "{capacity}%",
-    "format-discharging": "🔋{capacity}%",
-    "format-full": "Stationary"
+    "format": "BAT0 {capacity}%",
+    "format-charging": "Charging: {capacity}%",
+    "format-full": "BAT0 full"
   },
   "clock#simpleclock": {
     "tooltip": false,
@@ -67,16 +72,12 @@
     "format-muted": "muted",
     "on-click": "pavucontrol"
   },
-  "custom/sep": {
-    "format": "|",
-    "tooltip": false
-  },
   "custom/keyboard": {
     "exec": "~/.config/waybar/layout.sh",
     "interval": 1,
     "return-type": "json",
     "format": "{}",
     "tooltip": true
-  }
+  },
 }
 
