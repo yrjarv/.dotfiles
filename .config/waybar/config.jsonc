@@ -15,7 +15,7 @@
   "modules-center": [
     "cpu",
     "memory",
-    "battery"
+    "custom/battery"
   ],
   "modules-right": [
     "pulseaudio",
@@ -51,8 +51,8 @@
     "format-charging": "Charging: {capacity}%",
     "format-full": "BAT1 full"
   },*/
-  "battery": {
-    "exec": "~/.config/waybar/scripts/battery-status.sh",
+  "custom/battery": {
+    "exec": "~/.config/waybar/battery-status.sh",
     "interval": 10
   },
 

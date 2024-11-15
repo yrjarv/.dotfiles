@@ -45,7 +45,7 @@ window#waybar {
 
 #clock,
 #pulseaudio,
-#battery,
+#custom-battery,
 #cpu,
 #tray,
 #memory,
