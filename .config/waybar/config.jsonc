@@ -38,8 +38,8 @@
     "spacing": 10
   },
 
-  "battery": {
-    "bat": "BAT0",
+  /*"battery": {
+    "bat": "BAT1",
     "interval": 1,
     "states": {
       "warning": 30,
@@ -47,10 +47,15 @@
     },
     "format-icons": ["", "", "", "", ""],
     "max-length": 25,
-    "format": "BAT0 {capacity}%",
+    "format": "BAT1 {capacity}%",
     "format-charging": "Charging: {capacity}%",
-    "format-full": "BAT0 full"
+    "format-full": "BAT1 full"
+  },*/
+  "battery": {
+    "exec": "~/.config/waybar/scripts/battery-status.sh",
+    "interval": 10
   },
+
   "clock#simpleclock": {
     "tooltip": false,
     "format": "{:%H:%M}"
