@@ -10,7 +10,8 @@
   "modules-left": [
     "hyprland/workspaces",
     "hyprland/window",
-    "custom/keyboard"
+    "custom/keyboard",
+    "keyboard-state"
   ],
   "modules-center": [
     "cpu",
@@ -84,5 +85,13 @@
     "format": "{}",
     "tooltip": true
   },
+  "keyboard-state": {
+    "numlock": true,
+    "format": "NumLock {icon}",
+    "format-icons": {
+      "locked": "",
+      "unlocked": ""
+    }
+  }
 }
 
