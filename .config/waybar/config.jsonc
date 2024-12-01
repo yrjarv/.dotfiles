@@ -11,14 +11,15 @@
     "hyprland/workspaces",
     "hyprland/window",
     "custom/keyboard",
-    "keyboard-state"
+    "keyboard-state",
+    "cpu",
+    "memory"
   ],
   "modules-center": [
-    "cpu",
-    "memory",
-    "custom/battery"
+    "custom/hostname"
   ],
   "modules-right": [
+    "custom/battery",
     "pulseaudio",
     "clock",
     "clock#simpleclock",
@@ -92,6 +93,10 @@
       "locked": "",
       "unlocked": ""
     }
+  },
+  "custom/hostname": {
+    "exec": "cat /etc/hostname",
+    "interval": 1
   }
 }
 
