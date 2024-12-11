@@ -19,4 +19,6 @@ alias cybprisma='cd ~/internsystem-v2 && npx prisma generate'
 alias cybdev='cd ~/internsystem-v2 && npm run dev'
 alias ida='/usr/bin/idafree-8.4/ida64'
 
+export EDITOR="/usr/bin/vim"
+
 PS1='[\u@\h \W]\$ '
