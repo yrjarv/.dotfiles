@@ -11,13 +11,10 @@
     "hyprland/workspaces",
     "hyprland/window",
     "custom/keyboard",
-    "keyboard-state",
     "cpu",
     "memory"
   ],
-  "modules-center": [
-    "custom/hostname"
-  ],
+  "modules-center": ["keyboard-state", "custom/hostname", "keyboard-state"],
   "modules-right": [
     "custom/battery",
     "pulseaudio",
@@ -88,10 +85,10 @@
   },
   "keyboard-state": {
     "numlock": true,
-    "format": "NumLock {icon}",
+    "format": "{icon}",
     "format-icons": {
-      "locked": "",
-      "unlocked": ""
+      "locked": "",
+      "unlocked": "NUMLOCK IS OFF!"
     }
   },
   "custom/hostname": {
@@ -99,4 +96,3 @@
     "interval": 1
   }
 }
-

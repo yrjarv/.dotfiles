@@ -13,7 +13,7 @@ window#waybar {
   /* background-color: #181825; */
   /* background-color: #11111b; */
   /* background-color: rgba(24, 24, 37, 0.6); */
-  background-color: #000000
+  background-color: #000000;
 }
 
 #workspaces button {
@@ -64,10 +64,14 @@ window#waybar {
   /* background-color: #9399b2; */
 }
 
+#keyboard-state {
+  padding: 0;
+  background-color: red;
+}
+
 window#waybar.empty #window {
   background-color: transparent;
 }
-
 
 tooltip {
   background-color: #181825;
