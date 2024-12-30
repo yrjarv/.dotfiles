@@ -18,7 +18,7 @@ cd
 # Install packages
 cd
 sudo usermod -a -G input y
-sudo pacman -Syu --noconfirm eza bat ttf-fira-code waybar git nodejs npm less htop bluez gnome-keyringi cargo
+sudo pacman -Syu --noconfirm eza bat ttf-fira-code waybar git nodejs npm less htop bluez gnome-keyringi cargo libreoffice
 yay -S github-desktop-bin visual-studio-code-bin spotify discord bluetui
 cd
 
