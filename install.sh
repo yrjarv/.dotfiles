@@ -18,8 +18,8 @@ cd
 # Install packages
 cd
 sudo usermod -a -G input y
-sudo pacman -Syu --noconfirm eza bat ttf-fira-code waybar git nodejs npm less htop bluez gnome-keyringi cargo libreoffice
-yay -S github-desktop-bin visual-studio-code-bin spotify discord bluetui
+sudo pacman -Syu --noconfirm eza bat ttf-fira-code waybar git nodejs npm less htop bluez gnome-keyringi cargo libreoffice jdk-openjdk
+yay -S github-desktop-bin visual-studio-code-bin spotify discord bluetui spotify-adblock
 cd
 
 # Clone repos
@@ -118,12 +118,3 @@ cd
 sudo systemctl enable bluetooth.service
 cd
 
-# Install adblock
-cd
-cd Downloads
-git clone https://github.com/abba23/spotify-adblock.git
-cd spotify-adblock
-make
-cd ..
-rm -rf spotify-adblock
-cd
