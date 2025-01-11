@@ -19,7 +19,7 @@ cd
 cd
 sudo usermod -a -G input y
 sudo pacman -Syu --noconfirm eza bat ttf-fira-code waybar git nodejs npm less htop bluez gnome-keyringi cargo libreoffice jdk-openjdk
-yay -S github-desktop-bin visual-studio-code-bin spotify discord bluetui spotify-adblock
+yay -S github-desktop-bin visual-studio-code-bin spotify discord bluetui spotify-adblock hyprshot
 cd
 
 # Clone repos
@@ -117,4 +117,15 @@ cd
 cd
 sudo systemctl enable bluetooth.service
 cd
+
+# Set up usb stick configuration
+yay -S pam_usb
+pamusb-conf --add-device auth
+pamusb-conf --add-user y
+pamusb-check y
+firefox -new-tab "https://wiki.archlinux.org/title/Pam_usb#Setting_up_the_PAM_module" &
+echo "auth sufficient pam_usb.so"
+sleep 10s
+sudo vim /etc/pam.d/sddn
+sudo vim /etc/pam.d/system-auth
 
