@@ -1,0 +1,12 @@
+[alias]
+	last = log -1 HEAD
+	aco = "!git add . && git commit -m"
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	name = Yrjar Vederhus
+	email = yrjarvederhus@gmail.com
