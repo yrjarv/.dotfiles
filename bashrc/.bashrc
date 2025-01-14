@@ -21,6 +21,7 @@ alias cybssh='ssh -L 3307:localhost:3306 -i ~/.ssh/dbtunnel dbtunnel@158.39.200.
 alias cybprisma='cd ~/internsystem-v2 && npx prisma generate'
 alias cybdev='cd ~/internsystem-v2 && npm run dev'
 alias ida='/opt/ida-free-pc-9.0/ida'
+alias eduroam='sudo systemctl stop NetworkManager ; sudo systemctl stop wpa_supplicant ; sudo wpa_supplicant -B -i wlan0 -c ~/.config/cat_installer/cat_installer.conf'
 
 export EDITOR="/usr/bin/vim"
 
