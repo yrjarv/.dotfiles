@@ -30,8 +30,9 @@ alias ida='/opt/ida-free-pc-9.0/ida'
 
 alias eduroam='sudo systemctl stop NetworkManager ; sudo systemctl stop wpa_supplicant ; sudo wpa_supplicant -B -i wlan0 -c ~/.config/cat_installer/cat_installer.conf'
 
-alias push='find ~/ -type d -name ".git" ! -path "$HOME/internsystem-v2/.git" -exec sh -c 'cd "$(dirname "{}")" && echo "In directory: $(pwd)" && git push' \;'
-alias pull='find ~/ -type d -name ".git" ! -path "$HOME/internsystem-v2/.git" -exec sh -c 'cd "$(dirname "{}")" && echo "In directory: $(pwd)" && git pull' \;'
+alias push='find ~/ -type d -name ".git" ! -path "$HOME/internsystem-v2/.git" -exec sh -c '\''cd "$(dirname "{}")" && echo "In directory: $(pwd)" && git push'\'' \;'
+alias pull='find ~/ -type d -name ".git" ! -path "$HOME/internsystem-v2/.git" -exec sh -c '\''cd "$(dirname "{}")" && echo "In directory: $(pwd)" && git pull'\'' \;'
+
 
 
 export EDITOR="/usr/bin/vim"
