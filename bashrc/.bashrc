@@ -33,6 +33,15 @@ alias eduroam='sudo systemctl stop NetworkManager ; sudo systemctl stop wpa_supp
 alias push='find ~/ -maxdepth 2 -type d -name ".git" ! -path "$HOME/internsystem-v2/.git" -exec sh -c '\''cd "$(dirname "{}")" && echo "In directory: $(pwd)" && git push'\'' \;'
 alias pull='find ~/ -maxdepth 2 -type d -name ".git" ! -path "$HOME/internsystem-v2/.git" -exec sh -c '\''cd "$(dirname "{}")" && echo "In directory: $(pwd)" && git pull'\'' \;'
 
+alias 1010='cd ~/in1010'
+alias 1030='cd ~/in1030'
+alias 1150='cd ~/in1150'
+alias 2140='cd ~/in2140'
+alias 5290='cd ~/in5290'
+alias dotfiles='cd ~/.dotfiles'
+alias intern='cd ~/internsystem-v2'
+alias down='cd ~/Downloads'
+alias priv='cd ~/private-filer'
 
 
 export EDITOR="/usr/bin/vim"
