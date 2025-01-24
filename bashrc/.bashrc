@@ -19,8 +19,18 @@ alias tree='eza -lghT -L=2 --git-repos --git --icons --hyperlink'
 alias treea='tree -a -I .git'
 alias treeag='tree -a'
 
-alias uio='ssh yrjarv@login.uio.no'
-alias ifi='ssh yrjarv@login.ifi.uio.no'
+
+alias ssh='kitty -o background=#003000 kitten ssh'
+
+alias uio='kitty -o background=#300000 kitten ssh yrjarv@login.uio.no &'
+alias ifi='kitty -o background=#000030 kitten ssh yrjarv@login.ifi.uio.no &'
+
+alias adenin='kitty -o background=#000030 kitten ssh yrjarv@adenin.ifi.uio.no &'
+alias guanin='kitty -o background=#000030 kitten ssh yrjarv@guanin.ifi.uio.no &'
+alias sytosin='kitty -o background=#000030 kitten ssh yrjarv@sytosin.ifi.uio.no &'
+alias tymin='kitty -o background=#000030 kitten ssh yrjarv@tymin.ifi.uio.no &'
+
+
 
 alias cybssh='ssh -L 3307:localhost:3306 -i ~/.ssh/dbtunnel dbtunnel@158.39.200.46 -N'
 alias cybprisma='cd ~/internsystem-v2 && npx prisma generate'
