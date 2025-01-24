@@ -19,17 +19,19 @@ alias tree='eza -lghT -L=2 --git-repos --git --icons --hyperlink'
 alias treea='tree -a -I .git'
 alias treeag='tree -a'
 
+alias uio='kitten @ set-colors background=#300000 && kitten ssh yrjarv@login.uio.no && kitten @ set-colors background=#000000'
+alias ifi='kitten @ set-colors background=#000030 && kitten ssh yrjarv@login.ifi.uio.no && kitten @ set-colors background=#000000'
 
-alias ssh='kitty -o background=#003000 kitten ssh'
+alias adenin='kitten @ set-colors background=#000030 && kitten ssh yrjarv@adenin.ifi.uio.no && kitten @ set-colors background=#000000'
+alias guanin='kitten @ set-colors background=#000030 && kitten ssh yrjarv@guanin.ifi.uio.no && kitten @ set-colors background=#000000'
+alias sytosin='kitten @ set-colors background=#000030 && kitten ssh yrjarv@sytosin.ifi.uio.no && kitten @ set-colors background=#000000'
+alias tymin='kitten @ set-colors background=#000030 && kitten ssh yrjarv@tymin.ifi.uio.no && kitten @ set-colors background=#000000'
 
-alias uio='kitty -o background=#300000 kitten ssh yrjarv@login.uio.no &'
-alias ifi='kitty -o background=#000030 kitten ssh yrjarv@login.ifi.uio.no &'
-
-alias adenin='kitty -o background=#000030 kitten ssh yrjarv@adenin.ifi.uio.no &'
-alias guanin='kitty -o background=#000030 kitten ssh yrjarv@guanin.ifi.uio.no &'
-alias sytosin='kitty -o background=#000030 kitten ssh yrjarv@sytosin.ifi.uio.no &'
-alias tymin='kitty -o background=#000030 kitten ssh yrjarv@tymin.ifi.uio.no &'
-
+ssh() {
+    kitten @ set-colors background=#003000
+    command kitten ssh "$@"
+    kitten @ set-colors background=#000000
+}
 
 
 alias cybssh='ssh -L 3307:localhost:3306 -i ~/.ssh/dbtunnel dbtunnel@158.39.200.46 -N'
