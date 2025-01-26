@@ -19,13 +19,19 @@ alias tree='eza -lghT -L=2 --git-repos --git --icons --hyperlink'
 alias treea='tree -a -I .git'
 alias treeag='tree -a'
 
-alias uio='kitten @ set-colors background=#300000 && kitten ssh yrjarv@login.uio.no && kitten @ set-colors background=#000000'
-alias ifi='kitten @ set-colors background=#000030 && kitten ssh yrjarv@login.ifi.uio.no && kitten @ set-colors background=#000000'
+alias uio='kitten @ set-colors background=#300000 && kitten ssh -X yrjarv@login.uio.no && kitten @ set-colors background=#000000'
 
-alias adenin='kitten @ set-colors background=#000030 && kitten ssh yrjarv@adenin.ifi.uio.no && kitten @ set-colors background=#000000'
-alias guanin='kitten @ set-colors background=#000030 && kitten ssh yrjarv@guanin.ifi.uio.no && kitten @ set-colors background=#000000'
-alias sytosin='kitten @ set-colors background=#000030 && kitten ssh yrjarv@sytosin.ifi.uio.no && kitten @ set-colors background=#000000'
-alias tymin='kitten @ set-colors background=#000030 && kitten ssh yrjarv@tymin.ifi.uio.no && kitten @ set-colors background=#000000'
+function ifi() {
+    kitten @ set-colors background=#000030
+    local hostname
+    if [[ -z $1 ]]; then
+        hostname="login"
+    else
+        hostname=$1
+    fi
+    kitten ssh -X yrjarv@"$hostname".ifi.uio.no
+    kitten @ set-colors background=#000000
+}
 
 ssh() {
     kitten @ set-colors background=#003000
