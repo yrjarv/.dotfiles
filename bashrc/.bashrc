@@ -42,8 +42,8 @@ alias ida='/opt/ida-free-pc-9.0/ida'
 
 alias eduroam='sudo systemctl stop NetworkManager ; sudo systemctl stop wpa_supplicant ; sudo wpa_supplicant -B -i wlan0 -c ~/.config/cat_installer/cat_installer.conf'
 
-alias push='find ~/ -maxdepth 2 -type d -name ".git" ! -path "$HOME/internsystem-v2/.git" -exec sh -c '\''cd "$(dirname "{}")" && echo "In directory: $(pwd)" && git push'\'' \;'
-alias pull='find ~/ -maxdepth 2 -type d -name ".git" ! -path "$HOME/internsystem-v2/.git" -exec sh -c '\''cd "$(dirname "{}")" && echo "In directory: $(pwd)" && git pull'\'' \;'
+alias push='find ./ -maxdepth 2 -type d -name ".git" ! -path "internsystem-v2/.git" -exec sh -c '\''cd "$(dirname "{}")" && echo "In directory: $(pwd)" && git push'\'' \;'
+alias pull='find ./ -maxdepth 2 -type d -name ".git" ! -path "internsystem-v2/.git" -exec sh -c '\''cd "$(dirname "{}")" && echo "In directory: $(pwd)" && git pull'\'' \;'
 
 alias 1010='cd ~/in1010'
 alias 1030='cd ~/in1030'
