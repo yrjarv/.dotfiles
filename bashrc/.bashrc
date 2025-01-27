@@ -9,8 +9,9 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
 alias ll='eza -lghT -L=1 --git-repos --git --icons --hyperlink'
-alias la='ls -a'
 alias lla='ll -a -I .git'
+alias llg='eza -lghT -L=1 --git --icons --hyperlink'
+alias la='ls -a'
 alias llag='ll -a'
 
 alias cat='bat'
