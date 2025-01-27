@@ -20,7 +20,17 @@ alias tree='eza -lghT -L=2 --git-repos --git --icons --hyperlink'
 alias treea='tree -a -I .git'
 alias treeag='tree -a'
 
-alias uio='kitten @ set-colors background=#300000 && kitten ssh -X yrjarv@login.uio.no && kitten @ set-colors background=#000000'
+function uio() {
+    kitten @ set-colors background=#300000
+    local hostname
+    if [[ -z $1 ]]; then
+        hostname="login"
+    else
+        hostname=$1
+    fi
+    kitten ssh -X yrjarv@"$hostname".uio.no
+    kitten @ set-colors background=#000000
+}
 
 function ifi() {
     kitten @ set-colors background=#000030
