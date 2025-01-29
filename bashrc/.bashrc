@@ -62,6 +62,8 @@ alias eduroam='sudo systemctl stop NetworkManager ; sudo systemctl stop wpa_supp
 alias push='find ./ -maxdepth 2 -type d -name ".git" ! -path "*/internsystem-v2/.git" -exec sh -c '\''cd "$(dirname "{}")" && echo "In directory: $(pwd)" && git push'\'' \;'
 alias pull='find ./ -maxdepth 2 -type d -name ".git" ! -path "*/internsystem-v2/.git" -exec sh -c '\''cd "$(dirname "{}")" && echo "In directory: $(pwd)" && git pull'\'' \;'
 
+alias endday='push && shutdown now'
+
 alias 1010='cd ~/in1010'
 alias 1030='cd ~/in1030'
 alias 1150='cd ~/in1150'
