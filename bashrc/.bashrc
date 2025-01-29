@@ -16,7 +16,7 @@ alias tree='eza -lghT -L=2 --git-repos --git --icons --hyperlink'
 alias treea='tree -a -I .git'
 alias treeag='tree -a'
 
-alias cat='bat'
+alias cat='bat --style=plain'
 
 alias gduroot='gdu / --ignore-dirs "/home/y/virtualbox,/mnt,/proc,/dev,/sys,/run"'
 
