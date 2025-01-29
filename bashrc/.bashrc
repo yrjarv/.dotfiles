@@ -8,10 +8,8 @@
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
-alias ll='eza -lghT -L=1 --icons --hyperlink'
+alias ll='eza -lghT --git-repos --git -L=1 --icons --hyperlink'
 alias lla='ll -a -I .git'
-alias llg='ll --git-repos --git'
-alias llag='llg -a'
 alias la='ls -a'
 
 alias cat='bat'
