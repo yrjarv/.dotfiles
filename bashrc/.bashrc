@@ -12,11 +12,13 @@ alias ll='eza -lghT --git-repos --git -L=1 --icons --hyperlink'
 alias lla='ll -a -I .git'
 alias la='ls -a'
 
-alias cat='bat'
-
 alias tree='eza -lghT -L=2 --git-repos --git --icons --hyperlink'
 alias treea='tree -a -I .git'
 alias treeag='tree -a'
+
+alias cat='bat'
+
+alias gduroot='gdu / --ignore-dirs "/home/y/virtualbox,/mnt,/proc,/dev,/sys,/run"'
 
 function uio() {
     kitten @ set-colors background=#300000
