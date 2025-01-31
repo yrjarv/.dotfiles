@@ -36,11 +36,10 @@ function ifi() {
     kitten @ set-colors background=#000030
     local hostname
     if [[ -z $1 ]]; then
-        hostname="login"
+        kitten ssh -J yrjarv@morgoth.uio.no yrjarv@login.ifi.uio.no
     else
-        hostname=$1
+    	kitten ssh -X yrjarv@"$hostname".ifi.uio.no
     fi
-    kitten ssh -X yrjarv@"$hostname".ifi.uio.no
     kitten @ set-colors background=#000000
 }
 
