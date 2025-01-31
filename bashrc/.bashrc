@@ -50,6 +50,8 @@ ssh() {
     kitten @ set-colors background=#000000
 }
 
+alias uio-sftp='sftp yrjarv@sftp.uio.no'
+
 
 alias cybssh='ssh -L 3307:localhost:3306 -i ~/.ssh/dbtunnel dbtunnel@158.39.200.46 -N'
 alias cybprisma='cd ~/internsystem-v2 && npx prisma generate'
