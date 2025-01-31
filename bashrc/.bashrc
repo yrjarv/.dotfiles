@@ -38,7 +38,7 @@ function ifi() {
     if [[ -z $1 ]]; then
         kitten ssh -J yrjarv@morgoth.uio.no yrjarv@login.ifi.uio.no
     else
-    	kitten ssh -X yrjarv@"$hostname".ifi.uio.no
+    	kitten ssh -X yrjarv@"$1".ifi.uio.no
     fi
     kitten @ set-colors background=#000000
 }
