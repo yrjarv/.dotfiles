@@ -18,7 +18,7 @@ alias treeag='tree -a'
 
 alias cat='bat --style=plain'
 
-alias gduroot='gdu / --ignore-dirs "/home/y/virtualbox,/mnt,/proc,/dev,/sys,/run"'
+alias gduroot='gdu / --ignore-dirs "/home/y/virtualbox,/home/y/uio,/mnt,/dev,/run"'
 
 function uio() {
     kitten @ set-colors background=#300000
