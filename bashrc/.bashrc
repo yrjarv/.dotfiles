@@ -34,13 +34,22 @@ function uio() {
 
 function ifi() {
     kitten @ set-colors background=#000030
-    local hostname
     if [[ -z $1 ]]; then
         kitten ssh -J yrjarv@morgoth.uio.no yrjarv@login.ifi.uio.no
     else
     	kitten ssh -X yrjarv@"$1".ifi.uio.no
     fi
     kitten @ set-colors background=#000000
+}
+
+function uio-sftp() {
+    local hostname
+    if [[ -z $1 ]]; then
+	sftp yrjarv@sftp.uio.no
+    else
+	sftp yrjarv@sftp"$1".uio.no
+    fi
+
 }
 
 ssh() {
