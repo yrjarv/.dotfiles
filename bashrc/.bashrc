@@ -24,6 +24,12 @@ alias treeag='tree -a'
 
 alias gduroot='gdu / --ignore-dirs "/home/y/virtualbox,/home/y/uio,/mnt,/dev,/run"'
 
+kitten="kitten"
+
+if [[ $(hostname) == *uio* ]]; then
+    kitten=""
+fi
+
 function uio() {
     kitten @ set-colors background=#300000
     local hostname
@@ -32,16 +38,18 @@ function uio() {
     else
         hostname=$1
     fi
-    kitten ssh -X yrjarv@"$hostname".uio.no
+    
+    "$kitten" ssh -X yrjarv@"$hostname".uio.no
+    
     kitten @ set-colors background=#000000
 }
 
 function ifi() {
     kitten @ set-colors background=#000030
     if [[ -z $1 ]]; then
-        kitten ssh -J yrjarv@morgoth.uio.no yrjarv@login.ifi.uio.no
+        "$kitten" ssh -J yrjarv@morgoth.uio.no yrjarv@login.ifi.uio.no
     else
-    	kitten ssh -X yrjarv@"$1".ifi.uio.no
+    	"$kitten" ssh -X yrjarv@"$1".ifi.uio.no
     fi
     kitten @ set-colors background=#000000
 }
@@ -58,7 +66,7 @@ function uio-sftp() {
 
 ssh() {
     kitten @ set-colors background=#003000
-    command kitten ssh "$@"
+    command "$kitten" ssh "$@"
     kitten @ set-colors background=#000000
 }
 
