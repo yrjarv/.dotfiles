@@ -8,15 +8,19 @@
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
-alias ll='eza -lghT --git-repos --git -L=1 --icons --hyperlink'
+if [[ $(hostname) == *uio* ]]; then
+    alias ll='ls -l'
+else
+    alias ll='eza -lghT --git-repos --git -L=1 --icons --hyperlink'
+    alias tree='eza -L=2'
+    alias cat='bat --style=plain'
+fi
+
 alias lla='ll -a -I .git'
 alias la='ls -a'
 
-alias tree='eza -lghT -L=2 --git-repos --git --icons --hyperlink'
 alias treea='tree -a -I .git'
 alias treeag='tree -a'
-
-alias cat='bat --style=plain'
 
 alias gduroot='gdu / --ignore-dirs "/home/y/virtualbox,/home/y/uio,/mnt,/dev,/run"'
 
@@ -85,3 +89,4 @@ alias priv='cd ~/private-filer'
 export EDITOR="/usr/bin/vim"
 
 PS1='[\u@\h \W]\$ '
+
