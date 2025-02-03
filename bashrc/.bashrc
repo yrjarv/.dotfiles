@@ -24,12 +24,6 @@ alias treeag='tree -a'
 
 alias gduroot='gdu / --ignore-dirs "/home/y/virtualbox,/home/y/uio,/mnt,/dev,/run"'
 
-kitten="kitten"
-
-if [[ $(hostname) == *uio* ]]; then
-    kitten=""
-fi
-
 function uio() {
     kitten @ set-colors background=#300000
     local hostname
@@ -39,7 +33,7 @@ function uio() {
         hostname=$1
     fi
     
-    "$kitten" ssh -X yrjarv@"$hostname".uio.no
+    ssh -X yrjarv@"$hostname".uio.no
     
     kitten @ set-colors background=#000000
 }
@@ -47,9 +41,9 @@ function uio() {
 function ifi() {
     kitten @ set-colors background=#000030
     if [[ -z $1 ]]; then
-        "$kitten" ssh -J yrjarv@morgoth.uio.no yrjarv@login.ifi.uio.no
+        ssh -J yrjarv@morgoth.uio.no yrjarv@login.ifi.uio.no
     else
-    	"$kitten" ssh -X yrjarv@"$1".ifi.uio.no
+    	ssh -X yrjarv@"$1".ifi.uio.no
     fi
     kitten @ set-colors background=#000000
 }
@@ -62,12 +56,6 @@ function uio-sftp() {
 	sftp yrjarv@sftp"$1".uio.no
     fi
 
-}
-
-ssh() {
-    kitten @ set-colors background=#003000
-    command "$kitten" ssh "$@"
-    kitten @ set-colors background=#000000
 }
 
 alias cybssh='ssh -L 3307:localhost:3306 -i ~/.ssh/dbtunnel dbtunnel@158.39.200.46 -N'
