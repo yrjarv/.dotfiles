@@ -12,7 +12,7 @@ if [[ $(hostname) == *uio* ]]; then
     alias ll='ls -l'
 else
     alias ll='eza -lghT --git-repos --git -L=1 --icons --hyperlink'
-    alias tree='eza -L=2'
+    alias tree='ll -L=2 -I uio'
     alias cat='bat --style=plain'
 fi
 
@@ -70,17 +70,6 @@ alias push='find ./ -maxdepth 2 -type d -name ".git" ! -path "*/internsystem-v2/
 alias pull='find ./ -maxdepth 2 -type d -name ".git" ! -path "*/internsystem-v2/.git" -exec sh -c '\''cd "$(dirname "{}")" && echo "In directory: $(pwd)" && git pull'\'' \;'
 
 alias endday='cd && push && shutdown now'
-
-alias 1010='cd ~/in1010'
-alias 1030='cd ~/in1030'
-alias 1150='cd ~/in1150'
-alias 2140='cd ~/in2140'
-alias 5290='cd ~/in5290'
-alias dotfiles='cd ~/.dotfiles'
-alias intern='cd ~/internsystem-v2'
-alias down='cd ~/Downloads'
-alias priv='cd ~/private-filer'
-
 
 export EDITOR="/usr/bin/vim"
 
