@@ -30,58 +30,64 @@
     "active-only": false
   },
   "hyprland/window": {
-    "format": "{class}"
+    "format": "App: {class}"
   },
   "tray": {
     "show-passive-items": true,
     "spacing": 10
   },
 
-  /*"battery": {
-    "bat": "BAT1",
-    "interval": 1,
-    "states": {
-      "warning": 30,
-      "critical": 15
-    },
-    "format-icons": ["", "", "", "", ""],
-    "max-length": 25,
-    "format": "BAT1 {capacity}%",
-    "format-charging": "Charging: {capacity}%",
-    "format-full": "BAT1 full"
-  },*/
   "custom/battery": {
     "exec": "~/.config/waybar/battery-status.sh",
-    "interval": 10
+    "interval": 60
   },
 
   "clock#simpleclock": {
     "tooltip": false,
-    "interval": 1,
-    "format": "{:%H:%M:%S}"
+    "interval": 10,
+    "format": "{:%H:%M}"
   },
   "clock": {
     "format": "{:L%a %d %b}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    "tooltip-format": "<tt><big>{calendar}</big></tt>",
+    "locale": "en_DK.UTF-8",
+    "calendar": {
+        "mode"          : "year",
+        "mode-mon-col"  : 3,
+        "format": {
+            "months":     "<span color='#ffead3'><b>{}</b></span>",
+            "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+            "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+            "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+        }
+    },
+    "actions":  {
+        "on-click-right": "mode"
+    }
   },
+
   "cpu": {
-    "format": "CPU {usage}%",
+    "format": "CPU: {usage}%",
     "tooltip": true,
-    "interval": 1
+    "interval": 0.1,
+    "on-click": "kitty htop --sort-key PERCENT_CPU"
   },
   "memory": {
-    "format": "RAM {used:0.1f}Gi"
+    "format": "RAM: {used:0.1f}GB",
+    "tooltip": true,
+    "interval": 0.1,
+    "on-click": "kitty htop --sort-key PERCENT_MEM"
   },
   "pulseaudio": {
     "format": "Sound: {volume}%",
-    "format-muted": "muted",
+    "format-muted": "Sound: muted",
     "on-click": "pavucontrol"
   },
   "custom/keyboard": {
     "exec": "~/.config/waybar/layout.sh",
     "interval": 1,
     "return-type": "json",
-    "format": "{}",
+    "format": "Keyboard: {}",
     "tooltip": true
   },
   "keyboard-state": {
@@ -94,6 +100,6 @@
   },
   "custom/hostname": {
     "exec": "cat /etc/hostname",
-    "interval": 1
+    "interval": 3600
   }
 }
