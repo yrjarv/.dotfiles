@@ -40,7 +40,11 @@ function uio() {
 
 function ifi() {
     kitten @ set-colors background=#000030
-    ssh -X yrjarv@"$1".ifi.uio.no
+    if [[ -z $1 ]]; then
+        uiojump
+    else
+        ssh -X yrjarv@"$1".ifi.uio.no
+    fi
     kitten @ set-colors background=#000000
 }
 
