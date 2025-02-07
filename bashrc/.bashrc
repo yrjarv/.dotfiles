@@ -87,7 +87,24 @@ alias eduroam='sudo systemctl stop NetworkManager ; sudo systemctl stop wpa_supp
 
 alias push='find ./ -maxdepth 2 -type d -name ".git" ! -path "*/internsystem-v2/.git" -exec sh -c '\''cd "$(dirname "{}")" && echo "In directory: $(pwd)" && git push'\'' \;'
 alias pull='find ./ -maxdepth 2 -type d -name ".git" ! -path "*/internsystem-v2/.git" -exec sh -c '\''cd "$(dirname "{}")" && echo "In directory: $(pwd)" && git pull'\'' \;'
-alias status='find ./ -maxdepth 2 -type d -name ".git" ! -path "*/internsystem-v2/.git" -exec sh -c '\''cd "$(dirname "{}")" && echo "In directory: $(pwd)" && git status'\'' \;'
+
+function status() {
+  find ./ -maxdepth 2 -type d -name ".git" ! -path "*/internsystem-v2/.git" -exec sh -c '
+    cd "$(dirname "$1")" || exit
+    branch_status=$(git status -sb | grep -E "ahead|behind")
+    worktree_status=$(git status --short)
+    
+    if [ -n "$branch_status" ] || [ -n "$worktree_status" ]; then
+      echo "$(pwd)"
+      git status
+      echo "
+
+      "
+    fi
+  ' sh {} \;
+}
+
+# alias status='find ./ -maxdepth 2 -type d -name ".git" ! -path "*/internsystem-v2/.git" -exec sh -c '\''cd "$(dirname "{}")" && echo "In directory: $(pwd)" && git status'\'' \;'
 
 alias endday='cd && push && shutdown now'
 
