@@ -1,6 +1,7 @@
 [alias]
 	last = log -1 HEAD
 	aco = "!git add . && git commit -m"
+	word-diff = diff --word-diff
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
