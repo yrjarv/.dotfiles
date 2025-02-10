@@ -9,9 +9,15 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
 if [[ $(hostname) == *uio* ]]; then
-    alias ll='ls -l'
+    alias ll='ls -lh'
 else
-    alias ll='eza -lghT --git-repos --git -L=1 --icons --hyperlink'
+    function ll() {
+        if [[ "$PWD" == "/home/y/uio"* ]]; then
+	    ls -lh $1
+	else
+	    eza -lghT --git-repos --git -L=1 --icons --hyperlink $1
+	fi
+    }
     alias tree='ll -L=2 -I uio'
     alias cat='bat --style=plain'
 fi
