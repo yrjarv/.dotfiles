@@ -18,7 +18,6 @@ else
 	    eza -lghT --git-repos --git -L=1 --icons --hyperlink $1
 	fi
     }
-    alias tree='ll -L=2 -I uio'
     alias cat='bat --style=plain'
 fi
 
