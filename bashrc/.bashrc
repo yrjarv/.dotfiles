@@ -27,6 +27,8 @@ alias la='ls -a'
 alias treea='tree -a -I .git'
 alias treeag='tree -a'
 
+alias todo='~/todo/todo.py'
+
 alias gduroot='gdu / --ignore-dirs "/home/y/virtualbox,/home/y/uio,/mnt,/dev,/run"'
 
 function uio() {
