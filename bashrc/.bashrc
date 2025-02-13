@@ -47,27 +47,17 @@ function uio() {
 
 function ifi() {
     kitten @ set-colors background=#000030
-    if [[ -z $1 ]]; then
-        uiojump
-    else
-        ssh -X yrjarv@"$1".ifi.uio.no
-    fi
-    kitten @ set-colors background=#000000
-}
-
-function uiojump() {
-    kitten @ set-colors background=#003000
     local jumpname
     local hostname
     if [[ -z $1 ]]; then
 	jumpname="login"
 	hostname="login.ifi"
     else
-	jumpname=$1
+	hostname=$1
 	if [[ -z $2 ]]; then
-		hostname="login.ifi"
+	    jumpname="login"
 	else
-	    hostname=$2
+	    jumpname=$2
 	fi
     fi
     ssh -J yrjarv@"$jumpname".uio.no yrjarv@"$hostname".uio.no
