@@ -10,7 +10,6 @@
   "modules-left": [
     "hyprland/workspaces",
     "hyprland/window",
-    "custom/keyboard",
     "cpu",
     "memory"
   ],
@@ -82,13 +81,6 @@
     "format": "Sound: {volume}%",
     "format-muted": "Sound: muted",
     "on-click": "pavucontrol"
-  },
-  "custom/keyboard": {
-    "exec": "~/.config/waybar/layout.sh",
-    "interval": 1,
-    "return-type": "json",
-    "format": "Keyboard: {}",
-    "tooltip": true
   },
   "keyboard-state": {
     "numlock": true,
