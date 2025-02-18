@@ -22,6 +22,8 @@ alias la='ls -a'
 alias treea='tree -a -I .git'
 alias treeag='tree -a'
 
+alias please='sudo'
+
 alias todo='~/todo/todo.py'
 
 alias gduroot='gdu / --ignore-dirs "/home/y/virtualbox,/home/y/uio,/mnt,/dev,/run"'
@@ -67,6 +69,18 @@ function uio-sftp() {
 	sftp yrjarv@sftp"$1".uio.no
     fi
 
+}
+
+function mdpdf() {
+    mkdir -p pdf
+    pandoc -f markdown -t pdf -o "pdf/${1%.*}.pdf" $1
+}
+function mdedit() {
+    while true; do
+    	vim $1
+	mdpdf $1
+	evince "pdf/${1%.*}.pdf"
+    done
 }
 
 alias cybssh='ssh -L 3307:localhost:3306 -i ~/.ssh/dbtunnel dbtunnel@158.39.200.46 -N'
