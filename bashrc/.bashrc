@@ -75,13 +75,6 @@ function mdpdf() {
     mkdir -p pdf
     pandoc -f markdown -t pdf -o "pdf/${1%.*}.pdf" $1
 }
-function mdedit() {
-    while true; do
-    	vim $1
-	mdpdf $1
-	evince "pdf/${1%.*}.pdf"
-    done
-}
 
 alias cybssh='ssh -L 3307:localhost:3306 -i ~/.ssh/dbtunnel dbtunnel@158.39.200.46 -N'
 alias cybprisma='cd ~/internsystem-v2 && npx prisma generate'
