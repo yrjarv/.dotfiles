@@ -9,6 +9,7 @@ set relativenumber " But make them relativbe
 set scrolloff=8 " Start scrolling before the bottom
 set clipboard=unnamed " Use system clipboard
 set mouse=a " Allow mouse
+set linebreak
 
 " Tabbing
 set tabstop=4 " 4 space tabs
