@@ -31,12 +31,11 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-commentary'
     Plug 'dense-analysis/ale'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'fcpg/vim-fahrenheit'
 
 call plug#end()
 
 " Color
-colorscheme fahrenheit
+colorscheme industry
 
 " CoC
 so ~/.vim/coc.vim
