@@ -1,0 +1,43 @@
+" Files
+set fileformat=unix " Correct line endings
+set encoding=UTF-8 " Encoding
+
+" Look and feel
+syntax on " Syntax highlighting
+set number " Line number next to lines
+set relativenumber " But make them relativbe
+set scrolloff=8 " Start scrolling before the bottom
+set clipboard=unnamed " Use system clipboard
+set mouse=a " Allow mouse
+
+" Tabbing
+set tabstop=4 " 4 space tabs
+set shiftwidth=4
+set expandtab " Some auto tabbing
+set autoindent
+set smartindent
+set smarttab
+set expandtab
+
+" Search
+set ignorecase " Case-insensitive search
+set smartcase " except when I use an uppercase letter
+
+" Plugins
+call plug#begin('~/.vim/plugged')
+
+    Plug 'sheerun/vim-polyglot'
+    Plug 'mattn/emmet-vim'
+    Plug 'tpope/vim-commentary'
+    Plug 'dense-analysis/ale'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'fcpg/vim-fahrenheit'
+
+call plug#end()
+
+" Color
+colorscheme fahrenheit
+
+" CoC
+so ~/.vim/coc.vim
+
