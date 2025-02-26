@@ -11,6 +11,11 @@ set clipboard=unnamed " Use system clipboard
 set mouse=a " Allow mouse
 set linebreak
 
+" Max width
+set textwidth=80
+set formatoptions+=t
+set colorcolumn=80
+
 " Tabbing
 set tabstop=4 " 4 space tabs
 set shiftwidth=4
