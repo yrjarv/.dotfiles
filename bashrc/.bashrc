@@ -82,6 +82,8 @@ alias cybdev='cd ~/internsystem-v2 && npm run dev'
 
 alias ida='/opt/ida-free-pc-9.0/ida'
 
+alias emacs='vim'
+
 alias eduroam='sudo systemctl stop NetworkManager ; sudo systemctl stop wpa_supplicant ; sudo wpa_supplicant -B -i wlan0 -c ~/.config/cat_installer/cat_installer.conf'
 
 alias push='find ./ -maxdepth 2 -type d -name ".git" ! -path "*/internsystem-v2/.git" -exec sh -c '\''cd "$(dirname "{}")" && echo "In directory: $(pwd)" && git push'\'' \;'
