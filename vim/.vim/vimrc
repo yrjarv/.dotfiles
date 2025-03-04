@@ -42,6 +42,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-commentary'
     Plug 'dense-analysis/ale'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'APZelos/blamer.nvim'
+    Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
