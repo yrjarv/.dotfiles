@@ -42,9 +42,9 @@
   },
 
   "clock#simpleclock": {
-    "tooltip": false,
     "interval": 10,
-    "format": "{:%H:%M}"
+    "format": "{:%H:%M}",
+    "tooltip-format": "{:%H:%M:%S}"
   },
   "clock": {
     "format": "{:L%a %d %b}",
