@@ -10,7 +10,6 @@ set scrolloff=8 " Start scrolling before the bottom
 set clipboard=unnamed " Use system clipboard
 set mouse=a " Allow mouse
 set linebreak " Automatic linebreak
-set confirm " Confirm before exiting
 set showcmd " Show the command currently being written
 set wildmenu " Autocomplete command line commands
 
