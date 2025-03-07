@@ -5,7 +5,7 @@ set encoding=UTF-8 " Encoding
 " Look and feel
 syntax on " Syntax highlighting
 set number " Line number next to lines
-set relativenumber " But make them relativbe
+set relativenumber " But make them relative
 set scrolloff=8 " Start scrolling before the bottom
 set clipboard=unnamed " Use system clipboard
 set mouse=a " Allow mouse
