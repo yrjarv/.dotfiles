@@ -77,6 +77,7 @@
 (use-package dashboard
   :config
   (setq dashboard-projects-backend 'project-el
+        dashboard-startup-banner "~/.emacs.d/images/vim.png"
         dashboard-banner-logo-title nil
         dashboard-center-content t
         dashboard-page-separator "\n\n\n"
@@ -85,8 +86,7 @@
                           (bookmarks . 5)))
   (dashboard-setup-startup-hook))
 
-;; Font
-
+;; Font and ligatures
 (when (member "Fira Code" (font-family-list))
   (set-face-attribute 'default nil :font "Fira Code" :height 115))
 
@@ -123,3 +123,58 @@
       `((".*" . ,emacs-autosave-directory))
       auto-save-file-name-transforms
       `((".*" ,emacs-autosave-directory t)))
+
+;; Command overview
+(defun take-me-home ()
+  (interactive)
+  (if (looking-back "/" nil)
+      (progn (call-interactively 'delete-minibuffer-contents) (insert "~/"))
+    (call-interactively 'self-insert-command)))
+(use-package vertico
+  :bind (:map vertico-map ("~" . take-me-home))
+  :config
+  (vertico-mode)
+  (setq vertico-count 25))
+(use-package marginalia
+  :init 
+  (marginalia-mode 1))
+(use-package which-key
+  :config
+  (which-key-mode))
+
+;; Code autocomplete
+(use-package corfu
+  :init
+  (global-corfu-mode 1)
+  (corfu-popupinfo-mode 1)
+  :custom
+  (corfu-auto t)
+  (corfu-auto-delay 0.5)
+  (corfu-cycle t))
+
+;; Git stuff
+(use-package magit
+  :hook ((magit-pre-refresh . ignore)    ;; diff-hl-magit-pre-refresh is obsolete
+         (magit-post-refresh . ignore))  ;; diff-hl-magit-post-refresh is obsolete
+  :bind ("C-c m" . magit-status))
+(use-package diff-hl
+  :config
+  (global-diff-hl-mode 1 i
+(use-package blamer
+  :after magit
+  :bind (
+              ("C-c g i" . blamer-show-commit-info)
+              ("C-c g b" . blamer-show-posframe-commit-info))
+  :defer 20
+  :custom
+  (blamer-idle-time                 0.3)
+  (blamer-min-offset                4)
+  (blamer-max-commit-message-length 100)
+  (blamer-datetime-formatter        "[%s]")
+  (blamer-commit-formatter          " ● %s")
+  :custom-face
+  (blamer-face ((t :foreground "#008b8b"
+                    :background nil
+                    :height 1
+                    :italic nil))))
+
