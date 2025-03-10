@@ -24,7 +24,7 @@
 
 ;; Dolist 1
 (dolist (mode
-         '(display-line-numbers-mode
+         '(global-display-line-numbers-mode
            ))
   (funcall mode 1))
 
@@ -46,6 +46,13 @@
                split-height-threshold nil        ; Split verticly by default
                frame-resize-pixelwise t          ; Fine-grained frame resize
                auto-fill-function 'do-auto-fill) ; Auto-fill-mode everywhere
+
+;; Center text
+(use-package olivetti
+  :defer t
+  :bind ("C-c o" . olivetti-mode)
+  :config
+  (setq-default olivetti-body-width (+ fill-column 3)))
 
 ;; Prevent plugins from messing up my config
 (setq custom-file (concat user-emacs-directory "custom.el"))
@@ -159,7 +166,7 @@
   :bind ("C-c m" . magit-status))
 (use-package diff-hl
   :config
-  (global-diff-hl-mode 1 i
+  (global-diff-hl-mode 1))
 (use-package blamer
   :after magit
   :bind (
@@ -172,9 +179,34 @@
   (blamer-max-commit-message-length 100)
   (blamer-datetime-formatter        "[%s]")
   (blamer-commit-formatter          " ● %s")
+  (global-blamer-mode               1)
   :custom-face
   (blamer-face ((t :foreground "#008b8b"
                     :background nil
-                    :height 1
+                    :height 115
                     :italic nil))))
+
+;; Spell check
+(use-package jinx
+  :hook (org-mode . jinx-mode)
+  :bind ("C-." . jinx-correct)
+  :config
+  (setq jinx-languages "en_US nb-no"))
+
+;; Commenting
+(use-package evil-nerd-commenter
+  :defer t
+  :bind ("C-ø" . evilnc-comment-or-uncomment-lines))
+
+;;; LSP
+(use-package eglot
+  :defer t
+  :hook ((python-mode . eglot-ensure)
+         (java-mode . eglot-ensure)
+         (c-mode . eglot-ensure)
+         (nix-mode . eglot-ensure))
+  :config
+  (add-to-list 'eglot-server-programs
+               '(python-mode . ("pyright-langserver"))
+               '(java-mode . ("jdtls"))))
 
