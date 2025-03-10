@@ -39,15 +39,18 @@ call plug#begin('~/.vim/plugged')
     Plug 'sheerun/vim-polyglot'
     Plug 'mattn/emmet-vim'
     Plug 'tpope/vim-commentary'
-    Plug 'dense-analysis/ale'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'APZelos/blamer.nvim'
     Plug 'airblade/vim-gitgutter'
+    Plug 'dense-analysis/ale'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
 " Color
 colorscheme industry
+
+" ALE
+let g:ale_completion_enabled = 1
 
 " CoC
 so ~/.vim/coc.vim
