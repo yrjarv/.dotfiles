@@ -234,16 +234,19 @@
 
 ;; Move lines
 (use-package move-text
-  :bind (:map custom-bindings-map
-              ("C-M-<down>" . move-text-down)
-              ("C-M-<up>" . move-text-up)))
+  :bind (
+         ("C-M-<down>" . move-text-down)
+         ("C-M-<up>" . move-text-up)))
 
 ;; Spell check
 (use-package jinx
   :hook (org-mode . jinx-mode)
   :bind ("C-." . jinx-correct)
   :config
-  (setq jinx-languages "en_US nb-no"))
+  (setq jinx-languages "en_US nb-NO")
+  )
+
+
 
 ;; Commenting
 (use-package evil-nerd-commenter
@@ -268,7 +271,10 @@
   (corfu-auto t)
   (corfu-auto-delay 0.1)
   (corfu-auto-prefix 1)
-  (corfu-cycle t))
+  (corfu-cycle t)
+  :config
+  (setopt text-mode-ispell-word-completion nil) ; TODO make this work
+  )
 (use-package cape
   :init
   (add-hook 'completion-at-point-functions #'cape-dabbrev)
