@@ -118,9 +118,8 @@
         dashboard-banner-logo-title nil
         dashboard-center-content t
         dashboard-page-separator "\n\n\n"
-        dashboard-items '((projects  . 15)
-                          (recents   . 10)
-                          (bookmarks . 5)))
+        dashboard-items '((recents   . 20)
+                          (bookmarks . 20)))
   (dashboard-setup-startup-hook))
 
 ;; Fonts and ligatures
