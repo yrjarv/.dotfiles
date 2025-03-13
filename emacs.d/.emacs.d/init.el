@@ -245,8 +245,6 @@
   (setq jinx-languages "en_US nb-NO")
   )
 
-
-
 ;; Commenting
 (use-package evil-nerd-commenter
   :defer t
