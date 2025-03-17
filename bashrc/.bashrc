@@ -28,39 +28,6 @@ alias todo='~/todo/todo.py'
 
 alias gduroot='gdu / --ignore-dirs "/home/y/virtualbox,/home/y/uio,/mnt,/dev,/run"'
 
-function uio() {
-    kitten @ set-colors background=#300000
-    local hostname
-    if [[ -z $1 ]]; then
-        hostname="login"
-    else
-        hostname=$1
-    fi
-    
-    ssh -X yrjarv@"$hostname".uio.no
-    
-    kitten @ set-colors background=#000000
-}
-
-function ifi() {
-    kitten @ set-colors background=#000030
-    local jumpname
-    local hostname
-    if [[ -z $1 ]]; then
-	jumpname="login"
-	hostname="login.ifi"
-    else
-	hostname=$1
-	if [[ -z $2 ]]; then
-	    jumpname="login"
-	else
-	    jumpname=$2
-	fi
-    fi
-    ssh -J yrjarv@"$jumpname".uio.no yrjarv@"$hostname".uio.no
-    kitten @ set-colors background=#000000
-}
-
 function uio-sftp() {
     local hostname
     if [[ -z $1 ]]; then
@@ -68,16 +35,8 @@ function uio-sftp() {
     else
 	sftp yrjarv@sftp"$1".uio.no
     fi
-
 }
 
-function mdpdf() {
-    mkdir -p pdf
-    pandoc -f markdown -t pdf -o "pdf/${1%.*}.pdf" $1
-}
-
-alias cybssh='ssh -L 3307:localhost:3306 -i ~/.ssh/dbtunnel dbtunnel@158.39.200.46 -N'
-alias cybprisma='cd ~/internsystem-v2 && npx prisma generate'
 alias cybdev='cd ~/internsystem-v2 && npm run dev'
 
 alias ida='/opt/ida-free-pc-9.0/ida'
