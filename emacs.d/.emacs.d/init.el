@@ -337,3 +337,8 @@
     ;; otherwise, just do the normal kill word.
     (backward-kill-word 1)))
 (global-set-key (kbd "C-<backspace>") 'ryanmarcus/backward-kill-word)
+
+;; Evil mode
+(package-install 'evil)
+(require 'evil)
+(evil-mode 1)
