@@ -62,8 +62,6 @@ function status() {
   ' sh {} \;
 }
 
-# alias status='find ./ -maxdepth 2 -type d -name ".git" ! -path "*/internsystem-v2/.git" -exec sh -c '\''cd "$(dirname "{}")" && echo "In directory: $(pwd)" && git status'\'' \;'
-
 alias endday='cd && push && shutdown now'
 
 export EDITOR="/usr/bin/vim"
