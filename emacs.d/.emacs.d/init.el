@@ -69,6 +69,7 @@
                frame-resize-pixelwise t          ; Fine-grained frame resize
                auto-fill-function 'do-auto-fill) ; Auto-fill-mode everywhere
 
+
 ;; Center text
 (use-package olivetti
   :defer t
@@ -339,6 +340,35 @@
 (global-set-key (kbd "C-<backspace>") 'ryanmarcus/backward-kill-word)
 
 ;; Evil mode
-(package-install 'evil)
-(require 'evil)
-(evil-mode 1)
+(use-package evil
+  :config
+  (evil-mode 1)
+)
+(setq display-line-numbers 'relative)
+
+;; Org mode
+(use-package org
+  :defer t
+  :hook (org-mode . olivetti-mode)
+  :bind (:map org-mode-map
+              ("C-c C-c" . org-latex-export-to-pdf))
+  :config
+  (setq org-adapt-indentation t
+      org-hide-leading-stars t
+      org-pretty-entities t
+      org-startup-folded 'showeverything
+      org-src-fontify-natively t
+	  org-src-tab-acts-natively t
+      org-edit-src-content-indentation 0)
+  
+  ;; Resize Org headings
+  (custom-set-faces
+  '(org-document-title ((t (:height 1.6))))
+  '(outline-1          ((t (:height 1.25))))
+  '(outline-2          ((t (:height 1.2))))
+  '(outline-3          ((t (:height 1.15))))
+  '(outline-4          ((t (:height 1.1))))
+  '(outline-5          ((t (:height 1.1))))
+  '(outline-6          ((t (:height 1.1))))
+  '(outline-8          ((t (:height 1.1))))
+  '(outline-9          ((t (:height 1.1))))))
