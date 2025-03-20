@@ -44,6 +44,7 @@
 (dolist (mode
          '(global-display-line-numbers-mode
            column-number-mode
+           pixel-scroll-precision-mode
            ))
   (funcall mode 1))
 
