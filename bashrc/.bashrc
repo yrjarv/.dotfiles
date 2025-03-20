@@ -13,7 +13,7 @@ if [[ $(hostname) == *uio* ]]; then
 else
     alias ll='eza -lghT --git-repos --git -L=1 --icons --hyperlink'
     alias tree='ll -L=10'
-    alias cat='bat --style=plain'
+    alias cat='bat --style=plain --paging=always'
 fi
 
 alias lla='ll -a -I .git'
