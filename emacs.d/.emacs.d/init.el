@@ -84,10 +84,7 @@
 ;; Better undoing
 (use-package undo-fu
   :defer t
-  :bind (
-              ("C-z" . undo-fu-only-undo)
-              ("M-z" . undo-fu-only-redo)))
-
+)
 ;; Themes
 (defun disable-custom-themes (theme &optional no-confirm no-enable)
   (mapc 'disable-theme custom-enabled-themes))
@@ -291,8 +288,8 @@
                        (if header-line-format
                            (setq header-line-format nil)
                          (nano-modeline-pdf-mode))))
-              ("j" . pdf-view-next-line-or-next-page)
-              ("k" . pdf-view-previous-line-or-previous-page))
+              ("j" . pdf-view-next-page)
+              ("k" . pdf-view-previous-page))
   :init (pdf-loader-install)
   :config (add-to-list 'revert-without-query ".pdf"))
 (defun disable-line-numbers-for-pdf ()
