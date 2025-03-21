@@ -341,8 +341,9 @@
 (use-package evil
   :config
   (evil-mode 1)
+  (evil-set-undo-system 'undo-fu)
 )
-(setq display-line-numbers 'relative)
+(setopt display-line-numbers-type 'relative)
 
 ;; Org mode
 (use-package org
