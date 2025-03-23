@@ -32,6 +32,9 @@
 ;; Disable startup screens and messages
 (setq inhibit-splash-screen t)
 
+;; Nerd fonts
+(use-package nerd-icons)
+
 ;; Dolist 0
 (dolist (mode
          '(tool-bar-mode                ; No toolbars, more room for text
@@ -50,6 +53,9 @@
 
 ;; Yes/no => y/n
 (setopt use-short-answers t)
+
+;; Always follow symlinks
+(setq vc-follow-symlinks t)
 
 ;; UTF-8
 (set-language-environment    "UTF-8")
