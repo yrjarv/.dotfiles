@@ -68,5 +68,7 @@ alias endday='cd && push && shutdown now'
 
 export EDITOR="/usr/bin/vim"
 
+export MANSECT="2:3:1:8:5:4:7:6:9:3P"
+
 PS1='[\u@\h \W]\$ '
 
