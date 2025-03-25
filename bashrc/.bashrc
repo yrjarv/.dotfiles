@@ -8,7 +8,7 @@
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
-if [[ $(hostname) == *uio* ]]; then
+if [[ $(cat /etc/hostname) == *uio* ]]; then
     alias ll='ls -lh'
 else
     alias ll='eza -lghT --git-repos --git -L=1 --icons --hyperlink'
