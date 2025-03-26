@@ -1,5 +1,6 @@
 [alias]
 	last = log -1 HEAD
+    oneline = log --oneline
 	aco = "!git add . && git commit -m"
 	word-diff = diff --word-diff
 
