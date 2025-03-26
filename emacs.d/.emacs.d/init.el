@@ -48,6 +48,7 @@
          '(global-display-line-numbers-mode
            column-number-mode
            pixel-scroll-precision-mode
+           electric-pair-mode
            ))
   (funcall mode 1))
 
@@ -260,7 +261,8 @@
   :defer t
   :hook ((python-mode . eglot-ensure)
          (java-mode . eglot-ensure)
-         (c-mode . eglot-ensure))
+         (c-mode . eglot-ensure)
+         (markdown-mode . eglot-ensure))
   :config
   (add-to-list 'eglot-server-programs
                '(python-mode . ("pyright-langserver"))
