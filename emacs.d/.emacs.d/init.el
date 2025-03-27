@@ -45,10 +45,11 @@
 
 ;; Dolist 1
 (dolist (mode
-         '(global-display-line-numbers-mode
-           column-number-mode
-           pixel-scroll-precision-mode
-           electric-pair-mode
+         '(global-display-line-numbers-mode ; Line numbers
+           column-number-mode           ; Column numbers
+           pixel-scroll-precision-mode  ; Smooth scrolling
+           electric-pair-mode           ; Pair parentheseses etc
+           global-visual-line-mode      ; Wrap long lines
            ))
   (funcall mode 1))
 
