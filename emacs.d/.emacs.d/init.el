@@ -385,3 +385,6 @@
 
 ;; Nix
 (use-package nix-mode)
+
+;; Markdown
+(use-package markdown-mode)
