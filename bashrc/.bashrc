@@ -14,6 +14,7 @@ else
     alias ll='eza -lghT --git-repos --git -L=1 --icons --hyperlink'
     alias tree='ll -L=10'
     alias cat='bat --style=plain --paging=always'
+    source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
 fi
 
 alias lla='ll -a -I .git'
@@ -71,6 +72,3 @@ export EDITOR="/usr/bin/vim"
 export MANSECT="2:3:1:8:5:4:7:6:9:3P"
 
 PS1='[\u@\h \W]\$ '
-
-# Nix
-source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
