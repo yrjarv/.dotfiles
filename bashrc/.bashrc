@@ -16,6 +16,13 @@ else
     alias cat='bat --style=plain --paging=always'
 fi
 
+alias 1010='cd ~/in1010'
+alias 1030='cd ~/in1030'
+alias 1030o='cd ~/oblig-in1030'
+alias 1150='cd ~/in1150'
+alias 2140='cd ~/in2140'
+alias 2140o='cd ~/oblig-in2140'
+
 alias lla='ll -a -I .git'
 alias la='ls -a'
 
