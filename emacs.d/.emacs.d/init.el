@@ -71,12 +71,12 @@
 ;; Writing
 (setq-default tab-width 4                       ; Smaller tabs
               fill-column 79                    ; Maximum line width
-               truncate-lines t                  ; Don't fold lines
-               indent-tabs-mode nil              ; Use spaces instead of tabs
-               split-width-threshold 160         ; Split verticly by default
-               split-height-threshold nil        ; Split verticly by default
-               frame-resize-pixelwise t          ; Fine-grained frame resize
-               auto-fill-function 'do-auto-fill) ; Auto-fill-mode everywhere
+              truncate-lines t                  ; Don't fold lines
+              indent-tabs-mode nil              ; Use spaces instead of tabs
+              split-width-threshold 160         ; Split verticly by default
+              split-height-threshold nil        ; Split verticly by default
+              frame-resize-pixelwise t          ; Fine-grained frame resize
+              auto-fill-function 'do-auto-fill) ; Auto-fill-mode everywhere
 
 
 ;; Center text
@@ -92,7 +92,7 @@
 ;; Better undoing
 (use-package undo-fu
   :defer t
-)
+  )
 ;; Themes
 (defun disable-custom-themes (theme &optional no-confirm no-enable)
   (mapc 'disable-theme custom-enabled-themes))
@@ -138,16 +138,16 @@
 (use-package ligature
   :config
   (ligature-set-ligatures 't '("www" "**" "***" "**/" "*>" "*/" "\\\\" "\\\\\\" "{-" "::"
-                                     ":::" ":=" "!!" "!=" "!==" "-}" "----" "-->" "->" "->>"
-                                     "-<" "-<<" "-~" "#{" "#[" "##" "###" "####" "#(" "#?" "#_"
-                                     "#_(" ".-" ".=" ".." "..<" "..." "?=" "??" ";;" "/*" "/**"
-                                     "/=" "/==" "/>" "//" "///" "&&" "||" "||=" "|=" "|>" "^=" "$>"
-                                     "++" "+++" "+>" "=:=" "==" "===" "==>" "=>" "=>>" "<="
-                                     "=<<" "=/=" ">-" ">=" ">=>" ">>" ">>-" ">>=" ">>>" "<*"
-                                     "<*>" "<|" "<|>" "<$" "<$>" "<!--" "<-" "<--" "<->" "<+"
-                                     "<+>" "<=" "<==" "<=>" "<=<" "<>" "<<" "<<-" "<<=" "<<<"
-                                     "<~" "<~~" "</" "</>" "~@" "~-" "~>" "~~"
-                                     "~~>" "%%"))
+                               ":::" ":=" "!!" "!=" "!==" "-}" "----" "-->" "->" "->>"
+                               "-<" "-<<" "-~" "#{" "#[" "##" "###" "####" "#(" "#?" "#_"
+                               "#_(" ".-" ".=" ".." "..<" "..." "?=" "??" ";;" "/*" "/**"
+                               "/=" "/==" "/>" "//" "///" "&&" "||" "||=" "|=" "|>" "^=" "$>"
+                               "++" "+++" "+>" "=:=" "==" "===" "==>" "=>" "=>>" "<="
+                               "=<<" "=/=" ">-" ">=" ">=>" ">>" ">>-" ">>=" ">>>" "<*"
+                               "<*>" "<|" "<|>" "<$" "<$>" "<!--" "<-" "<--" "<->" "<+"
+                               "<+>" "<=" "<==" "<=>" "<=<" "<>" "<<" "<<-" "<<=" "<<<"
+                               "<~" "<~~" "</" "</>" "~@" "~-" "~>" "~~"
+                               "~~>" "%%"))
   (global-ligature-mode 't)
   )
 
@@ -222,8 +222,8 @@
 (use-package blamer
   :after magit
   :bind (
-              ("C-c g i" . blamer-show-commit-info)
-              ("C-c g b" . blamer-show-posframe-commit-info))
+         ("C-c g i" . blamer-show-commit-info)
+         ("C-c g b" . blamer-show-posframe-commit-info))
   :defer 20
   :custom
   (blamer-idle-time                 0.3)
@@ -234,9 +234,9 @@
   (global-blamer-mode               1)
   :custom-face
   (blamer-face ((t :foreground "#008b8b"
-                    :background nil
-                    :height 115
-                    :italic nil))))
+                   :background nil
+                   :height 115
+                   :italic nil))))
 
 ;; Move lines
 (use-package move-text
@@ -352,7 +352,7 @@
   :config
   (evil-mode 1)
   (evil-set-undo-system 'undo-fu)
-)
+  )
 (setopt display-line-numbers-type 'relative)
 
 ;; Org mode
@@ -363,12 +363,12 @@
               ("C-c C-c" . org-latex-export-to-pdf))
   :config
   (setq org-adapt-indentation t
-      org-hide-leading-stars t
-      org-pretty-entities t
-      org-startup-folded 'showeverything
-      org-src-fontify-natively t
-	  org-src-tab-acts-natively t
-      org-edit-src-content-indentation 0)
+        org-hide-leading-stars t
+        org-pretty-entities t
+        org-startup-folded 'showeverything
+        org-src-fontify-natively t
+	    org-src-tab-acts-natively t
+        org-edit-src-content-indentation 0)
   
   ;; Resize Org headings
   (custom-set-faces
