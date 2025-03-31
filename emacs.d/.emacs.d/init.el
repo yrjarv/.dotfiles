@@ -264,7 +264,6 @@
          (java-mode . eglot-ensure)
          (c-mode . eglot-ensure)
          (markdown-mode . eglot-ensure)
-         (nix-mode . eglot-ensure)
          )
   :config
   (add-to-list 'eglot-server-programs
@@ -382,9 +381,6 @@
   '(outline-6          ((t (:height 1.1))))
   '(outline-8          ((t (:height 1.1))))
   '(outline-9          ((t (:height 1.1))))))
-
-;; Nix
-(use-package nix-mode)
 
 ;; Markdown
 (use-package markdown-mode)

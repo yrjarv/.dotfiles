@@ -14,7 +14,6 @@ else
     alias ll='eza -lghT --git-repos --git -L=1 --icons --hyperlink'
     alias tree='ll -L=10'
     alias cat='bat --style=plain --paging=always'
-    source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
 fi
 
 alias lla='ll -a -I .git'
