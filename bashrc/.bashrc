@@ -73,6 +73,8 @@ function status() {
 
 alias endday='cd && push && shutdown now'
 
+source /usr/share/bash-completion/completions/git
+
 export EDITOR="/usr/bin/vim"
 
 export MANSECT="2:3:1:8:5:4:7:6:9:3P"
