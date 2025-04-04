@@ -22,6 +22,7 @@ alias 1030o='cd ~/oblig-in1030'
 alias 1150='cd ~/in1150'
 alias 2140='cd ~/in2140'
 alias 2140o='cd ~/oblig-in2140'
+alias he='cd ~/oblig-in2140/eksamen/src'
 
 alias lla='ll -a -I .git'
 alias la='ls -a'
