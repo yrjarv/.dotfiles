@@ -3,7 +3,7 @@
     oneline = log --oneline
 	aco = "!git add . && git commit -m"
 	word-diff = diff --word-diff
-    graph = log --graph --pretty=oneline --abbrev-commit
+    graph = log --all --decorate --oneline --graph --abbrev-commit
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
