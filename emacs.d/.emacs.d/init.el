@@ -50,6 +50,7 @@
            pixel-scroll-precision-mode  ; Smooth scrolling
            electric-pair-mode           ; Pair parentheseses etc
            global-visual-line-mode      ; Wrap long lines
+           editorconfig-mode
            ))
   (funcall mode 1))
 
