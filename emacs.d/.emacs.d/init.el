@@ -269,6 +269,10 @@
   (add-to-list 'eglot-server-programs
                '(python-mode . ("pyright-langserver"))
                '(java-mode . ("jdtls"))))
+(use-package prog-mode
+  :ensure nil
+  :hook (after-save . eglot-format-buffer)
+  )
 (use-package corfu
   :init
   (global-corfu-mode 1)
