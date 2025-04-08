@@ -271,7 +271,9 @@
                '(java-mode . ("jdtls"))))
 (use-package prog-mode
   :ensure nil
-  :hook (after-save . eglot-format-buffer)
+  :hook (prog-mode . (lambda () (add-hook 'after-save-hook
+                                          #'eglot-format-buffer
+                                          nil t)))
   )
 (use-package corfu
   :init
