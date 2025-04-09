@@ -121,7 +121,6 @@
 (use-package dashboard
   :config
   (setq dashboard-projects-backend 'project-el
-        dashboard-startup-banner "~/.emacs.d/images/vim.png"
         dashboard-banner-logo-title nil
         dashboard-center-content t
         dashboard-page-separator "\n\n\n"
