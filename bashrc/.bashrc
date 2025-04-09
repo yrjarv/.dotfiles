@@ -31,6 +31,8 @@ alias treea='tree -a -I .git'
 alias treeag='tree -a'
 
 alias please='sudo'
+eval $(thefuck --alias fuck)
+eval $(thefuck --alias faen)
 
 alias todo='~/todo/todo.py'
 
