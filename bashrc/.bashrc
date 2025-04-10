@@ -14,6 +14,8 @@ else
     alias ll='eza -lghT --git-repos --git -L=1 --icons --hyperlink'
     alias tree='ll -L=10'
     alias cat='bat --style=plain --paging=always'
+    eval $(thefuck --alias fuck)
+    eval $(thefuck --alias faen)
 fi
 
 alias 1010='cd ~/in1010'
@@ -31,9 +33,6 @@ alias treea='tree -a -I .git'
 alias treeag='tree -a'
 
 alias please='sudo'
-eval $(thefuck --alias fuck)
-eval $(thefuck --alias faen)
-
 alias todo='~/todo/todo.py'
 
 alias gduroot='gdu / --ignore-dirs "/home/y/virtualbox,/home/y/uio,/mnt,/dev,/run"'
@@ -52,8 +51,6 @@ alias cybdev='cd ~/internsystem-v2 && npm run dev'
 alias ida='/opt/ida-free-pc-9.0/ida'
 
 alias emacs='emacs -nw'
-
-alias old_eduroam_hack='sudo systemctl stop NetworkManager ; sudo systemctl stop wpa_supplicant ; sudo wpa_supplicant -B -i wlan0 -c ~/.config/cat_installer/cat_installer.conf'
 
 alias push='find ./ -maxdepth 2 -type d -name ".git" ! -path "*/internsystem-v2/.git" -exec sh -c '\''cd "$(dirname "{}")" && echo "In directory: $(pwd)" && git push'\'' \;'
 alias pull='find ./ -maxdepth 2 -type d -name ".git" ! -path "*/internsystem-v2/.git" -exec sh -c '\''cd "$(dirname "{}")" && echo "In directory: $(pwd)" && git pull'\'' \;'
