@@ -48,7 +48,7 @@ function uio-sftp() {
 
 alias cybdev='cd ~/internsystem-v2 && npm run dev'
 
-alias ida='/opt/ida-free-pc-9.0/ida'
+alias ida='/opt/ida-free-pc*/ida'
 
 alias emacs='emacs -nw'
 
