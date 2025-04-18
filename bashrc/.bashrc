@@ -75,6 +75,11 @@ alias endday='cd && push && shutdown now'
 
 source /usr/share/bash-completion/completions/git
 
+
+# Use bash-completion, if available
+[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+    . /usr/share/bash-completion/bash_completion
+
 export EDITOR="/usr/bin/vim"
 
 export MANSECT="2:3:1:8:5:4:7:6:9:3P"
