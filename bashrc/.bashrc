@@ -71,6 +71,10 @@ function status() {
   ' sh {} \;
 }
 
+function forever() {
+    while true; do $1; done
+}
+
 alias endday='cd && push && shutdown now'
 
 source /usr/share/bash-completion/completions/git
