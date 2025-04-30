@@ -338,20 +338,6 @@
 
 (add-hook 'find-file-hook 'auto-revert-pdf-on-change)
 
-;; Better ctrl-backspace (kill word)
-(defun ryanmarcus/backward-kill-word ()
-  "Remove all whitespace if the character behind the cursor is whitespace, otherwise remove a word."
-  (interactive)
-  (if (looking-back "[ \n]")
-      ;; delete horizontal space before us and then check to see if we
-      ;; are looking at a newline
-      (progn (delete-horizontal-space 't)
-             (while (looking-back "[ \n]")
-               (backward-delete-char 1)))
-    ;; otherwise, just do the normal kill word.
-    (backward-kill-word 1)))
-(global-set-key (kbd "C-<backspace>") 'ryanmarcus/backward-kill-word)
-
 ;; Evil mode
 (use-package evil
   :config
