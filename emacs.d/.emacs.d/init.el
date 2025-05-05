@@ -256,18 +256,28 @@
   :defer t
   :bind ("C-;" . evilnc-comment-or-uncomment-lines))
 
-;;; LSP/autocomplete
+;; LSP/autocomplete
+(use-package typescript-ts-mode
+  :ensure nil
+  :defer t
+  :mode "\\.tsx?\\'"
+  :hook (tsx-ts-mode . eglot-ensure))
+(use-package tree-sitter-langs)
 (use-package eglot
   :defer t
   :hook ((python-mode . eglot-ensure)
          (java-mode . eglot-ensure)
          (c-mode . eglot-ensure)
          (markdown-mode . eglot-ensure)
+         (typescript-ts-mode . eglot-ensure)
+         (tsx-ts-mode . eglot-ensure)
          )
   :config
   (add-to-list 'eglot-server-programs
                '(python-mode . ("pyright-langserver"))
-               '(java-mode . ("jdtls"))))
+               '(java-mode . ("jdtls"))
+               ;; '(tsx-ts-mode . ("typescript-language-server"))
+               ))
 (use-package prog-mode
   :ensure nil
   :hook (prog-mode . (lambda () (add-hook 'after-save-hook
