@@ -262,6 +262,7 @@
   :defer t
   :mode "\\.tsx?\\'"
   :hook (tsx-ts-mode . eglot-ensure))
+(dolist (mapping '((typescript-mode . tsx-ts-mode))))
 (use-package tree-sitter-langs)
 (use-package eglot
   :defer t
