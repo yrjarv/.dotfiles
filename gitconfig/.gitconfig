@@ -4,6 +4,7 @@
 	aco = "!git add . && git commit -m"
 	word-diff = diff --word-diff
     graph = log --all --decorate --oneline --graph --abbrev-commit
+    contributors = shortlog --summary --numbered --email --all
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
