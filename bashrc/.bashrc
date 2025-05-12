@@ -33,6 +33,8 @@ alias treeag='tree -a'
 alias please='sudo'
 alias todo='~/todo/todo.py'
 
+alias n='nvim'
+
 alias gduroot='gdu / --ignore-dirs "/home/y/virtualbox,/home/y/uio,/mnt,/dev,/run"'
 
 function uio-sftp() {
