@@ -1,47 +1,22 @@
 * {
-  min-height: 0;
-  min-width: 0;
   font-family: "Fira Code";
   font-size: 16px;
   font-weight: 600;
-}
-
-window#waybar {
-  transition-property: background-color;
-  transition-duration: 0.5s;
-  /* background-color: #1e1e2e; */
-  /* background-color: #181825; */
-  /* background-color: #11111b; */
-  /* background-color: rgba(24, 24, 37, 0.6); */
-  background-color: #000000;
+  background-color: black;
 }
 
 #workspaces button {
-  min-height: 0;
-  min-width: 0;
   padding: 0.3em 0.6em;
   margin: 5px 4px;
-  border-radius: 4px;
-  /* background-color: #181825; */
-  background-color: #1e1e2e;
-  color: #cdd6f4;
-}
-
-#workspaces button:hover {
-  box-shadow: inherit;
-  text-shadow: inherit;
-  color: #1e1e2e;
-  background-color: #cdd6f4;
+  color: white;
 }
 
 #workspaces button.active {
-  background-color: #1e1e2e;
-  color: #89b4fa;
+  color: lightgreen;
 }
 
 #workspaces button.urgent {
-  background-color: #1e1e2e;
-  color: #f38ba8;
+  color: red;
 }
 
 #clock,
@@ -54,26 +29,12 @@ window#waybar {
 #custom-keyboard,
 #keyboard-state,
 #custom-hostname {
-  min-height: 0;
-  min-width: 0;
   padding: 0.3em 0.6em;
-  border-radius: 4px;
   margin: 5px 4px;
-  color: #ffffff;
-  /* background-color: #181825; */
-  /* background-color: #9399b2; */
-}
-
-#keyboard-state {
-  padding: 0;
-  background-color: red;
-}
-
-window#waybar.empty #window {
-  background-color: transparent;
+  color: white;
 }
 
 tooltip {
-  background-color: #181825;
-  border: 2px solid #89b4fa;
+  background-color: black;
+  border: 1px solid white;
 }

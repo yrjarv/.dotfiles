@@ -1,25 +1,20 @@
 {
+  // Global
   "layer": "bottom",
   "position": "bottom",
-  "height": 40,
-  "spacing": 2,
+  "height": 44,
+  "spacing": 9,
   "exclusive": true,
   "gtk-layer-shell": true,
   "passthrough": false,
   "fixed-center": true,
+
+  // Left modules
   "modules-left": [
     "hyprland/workspaces",
     "hyprland/window",
     "cpu",
     "memory"
-  ],
-  "modules-center": ["keyboard-state", "custom/hostname", "keyboard-state"],
-  "modules-right": [
-    "custom/battery",
-    "pulseaudio",
-    "clock",
-    "clock#simpleclock",
-    "tray"
   ],
   "hyprland/workspaces": {
     "on-click": "activate",
@@ -31,21 +26,44 @@
   "hyprland/window": {
     "format": "App: {class}"
   },
-  "tray": {
-    "show-passive-items": true,
-    "spacing": 10
+  "cpu": {
+    "format": "CPU: {usage}%",
+    "tooltip": true,
+    "interval": 0.1,
+    "on-click": "kitty htop --sort-key PERCENT_CPU"
+  },
+  "memory": {
+    "format": "RAM: {used:0.1f}GB",
+    "tooltip": true,
+    "interval": 0.1,
+    "on-click": "kitty htop --sort-key PERCENT_MEM"
   },
 
+  // Center modules
+  "modules-center": ["custom/hostname"],
+  "custom/hostname": {
+    "exec": "cat /etc/hostname",
+    "interval": 3600
+  },
+  
+  // Right modules
+  "modules-right": [
+    "custom/battery",
+    "pulseaudio",
+    "clock",
+    "clock#simpleclock",
+    "tray"
+  ],
   "custom/battery": {
     "exec": "~/.config/waybar/battery-status.sh",
     "interval": 60
   },
-
-  "clock#simpleclock": {
-    "interval": 10,
-    "format": "{:%H:%M}",
-    "tooltip-format": "{:%H:%M:%S}"
+  "pulseaudio": {
+    "format": "Sound: {volume}%",
+    "format-muted": "Sound: muted",
+    "on-click": "pavucontrol"
   },
+
   "clock": {
     "format": "{:L%a %d %b}",
     "tooltip-format": "<tt><big>{calendar}</big></tt>",
@@ -64,34 +82,13 @@
         "on-click-right": "mode"
     }
   },
-
-  "cpu": {
-    "format": "CPU: {usage}%",
-    "tooltip": true,
-    "interval": 0.1,
-    "on-click": "kitty htop --sort-key PERCENT_CPU"
+  "clock#simpleclock": {
+    "interval": 10,
+    "format": "{:%H:%M}",
+    "tooltip-format": "{:%H:%M:%S}"
   },
-  "memory": {
-    "format": "RAM: {used:0.1f}GB",
-    "tooltip": true,
-    "interval": 0.1,
-    "on-click": "kitty htop --sort-key PERCENT_MEM"
-  },
-  "pulseaudio": {
-    "format": "Sound: {volume}%",
-    "format-muted": "Sound: muted",
-    "on-click": "pavucontrol"
-  },
-  "keyboard-state": {
-    "numlock": true,
-    "format": "{icon}",
-    "format-icons": {
-      "locked": "",
-      "unlocked": "NUMLOCK IS OFF!"
-    }
-  },
-  "custom/hostname": {
-    "exec": "cat /etc/hostname",
-    "interval": 3600
+  "tray": {
+    "show-passive-items": true,
+    "spacing": 10
   }
 }
