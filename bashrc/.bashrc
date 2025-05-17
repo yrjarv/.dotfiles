@@ -36,6 +36,7 @@ alias todo='~/todo/todo.py'
 alias calendar='cal -wym'
 
 alias n='nvim'
+alias nconf='cd ~/nvim/config/.config/nvim'
 
 alias gduroot='gdu / --ignore-dirs "/home/y/virtualbox,/home/y/uio,/mnt,/dev,/run"'
 
