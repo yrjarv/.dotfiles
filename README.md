@@ -12,7 +12,7 @@ Installation requirements: `git` and `stow` (GNU Stow)
 ```bash
 git clone git@github.com:yrjarv/.dotfiles ~/.dotfiles
 cd ~/.dotfiles
-stow *
+stow */
 ```
 
 ## "Documentation"/description of everything in the repo
