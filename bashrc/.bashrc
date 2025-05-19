@@ -5,10 +5,12 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Default aliases
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
-if [[ $(cat /etc/hostname) == *uio* ]]; then
+# Aliases that won't work on UiO servers
+if [[ $(cat /etc/hostname) == *uio* ]]; then # If on UiO server
     alias ll='ls -lh'
 else
     alias ll='eza -lghT --git-repos --git -L=1 --icons --hyperlink'
@@ -18,28 +20,36 @@ else
     eval $(thefuck --alias faen)
 fi
 
+# Aliases to quickly change directories
 alias 1010='cd ~/in1010'
 alias 1030='cd ~/in1030'
 alias 1150='cd ~/in1150'
 alias 2140='cd ~/in2140'
 alias web='cd ~/website/src'
 
-alias lla='ll -a -I .git'
+# Listing directories
+alias lla='ll -a'
 alias la='ls -a'
-
 alias treea='tree -a -I .git'
 alias treeag='tree -a'
 
-alias please='sudo'
-alias todo='~/todo/todo.py'
+# Nice to have
+alias calendar='cal -wym'   # Calendar for the whole year
+alias gduroot='gdu / --ignore-dirs "/home/y/virtualbox,/mnt,/dev,/run"' # Ignore some large directories in GDU
 
-alias calendar='cal -wym'
-
+# Neovim
 alias n='nvim'
 alias nconf='cd ~/nvim/config/.config/nvim'
 
-alias gduroot='gdu / --ignore-dirs "/home/y/virtualbox,/home/y/uio,/mnt,/dev,/run"'
+# Programs
+alias todo='~/todo/todo.py' # For my own todolist script
+alias ida='/opt/ida-free-pc*/ida' # For some reason, this isn't in PATH and I am too lazy to fix it
+alias emacs='emacs -nw' # To make emacs behave like vim/neovim when in the terminal
 
+# SFTP into UiO file server
+# There are two servers, sftp1.uio.no and stfp2.uio.no. With this function, I
+# can choose which one to connect to - or be assigned one randomly through
+# sftp.uio.no
 function uio-sftp() {
     local hostname
     if [[ -z $1 ]]; then
@@ -49,15 +59,12 @@ function uio-sftp() {
     fi
 }
 
-alias cybdev='cd ~/internsystem-v2 && npm run dev'
-
-alias ida='/opt/ida-free-pc*/ida'
-
-alias emacs='emacs -nw'
-
+# Git
+# These aliases perform actions in all git repos directly inside ~, except
+# ~/internsystem-v2, because that is a shared project where I want manually do
+# any changes to upstream or origin.
 alias push='find ./ -maxdepth 2 -type d -name ".git" ! -path "*/internsystem-v2/.git" -exec sh -c '\''cd "$(dirname "{}")" && echo "In directory: $(pwd)" && git push'\'' \;'
 alias pull='find ./ -maxdepth 2 -type d -name ".git" ! -path "*/internsystem-v2/.git" -exec sh -c '\''cd "$(dirname "{}")" && echo "In directory: $(pwd)" && git pull'\'' \;'
-
 function status() {
   find ./ -maxdepth 2 -type d -name ".git" ! -path "*/internsystem-v2/.git" -exec sh -c '
     cd "$(dirname "$1")" || exit
@@ -73,22 +80,19 @@ function status() {
     fi
   ' sh {} \;
 }
-
-function forever() {
-    while true; do $1; done
-}
-
 alias endday='cd && push && shutdown now'
 
-source /usr/share/bash-completion/completions/git
+# Just nice to have, to run a command forever
+function forever() {
+    while true; do $*; done
+}
 
 
-# Use bash-completion, if available
+# Bash completion
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
+source /usr/share/bash-completion/completions/git
 
-export EDITOR="/usr/bin/vim"
-
-export MANSECT="2:3:1:8:5:4:7:6:9:3P"
-
-PS1='[\u@\h \W]\$ '
+export EDITOR="/usr/bin/nvim" # Instead of nano
+export MANSECT="2:3:1:8:5:4:7:6:9:3P" # Prevents Posix syscall manual from being default
+PS1='[\u@\h \W]\$ ' # Very simple prompt
