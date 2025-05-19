@@ -26,10 +26,10 @@ I previously tried to create a script for after-install setup of my arch
 installations, but that failed.
 
 Now, the directory only contains `devilry_colors.js` - a script made by [Johann
-Tveranger](github.com/johtve) to make the [Devilry](devilry.ifi.uio.no) UI a
-little bit less confusing. I have modified it slightly, so that there is
-slightly less visual clutter. To use the script, install Tampermonkey in your
-browser.
+Tveranger](https://www.github.com/johtve) to make the [Devilry
+](https://devilry.ifi.uio.no) UI a little bit less confusing. I have modified it
+slightly, so that there is even less visual clutter. To use the script, install
+Tampermonkey in your browser.
 
 ### `bash_profile` and `bashrc`
 
@@ -77,9 +77,10 @@ This is where most of the good stuff is.
 ### `emacs.d`
 
 I am still trying to figure out if I should use neovim or emacs. In [my `nvim`
-repository](github.com/yrjarv/nvim) I am currently setting up neovim, but this
-is where I keep a somewhat functioning emacs config - so I have something to
-fall back on while if I need to do something important while I configure neovim.
+repository](https://www.github.com/yrjarv/nvim) I am currently setting up
+neovim, but this is where I keep a somewhat functioning emacs config - so I have
+something to fall back on if I need to do something important while I configure
+neovim.
 
 ### `gitconfig`
 
