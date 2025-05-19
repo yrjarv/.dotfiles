@@ -110,12 +110,12 @@ a few people at IFI: It is very repetetive, but allows me to run `ssh guanin`
 instead of `ssh yrjarv@guanin.uio.no -J yrjarv@login.uio.no` when I want to
 acces the department's `guanin` server.
 
-### tmux.conf
+### `tmux.conf`
 
 I am trying to learn to use tmux, so this is where I am trying to create a
 decent tmux configuration.
 
-### zshrc
+### `zshrc`
 
 I am also trying to use zsh, but because I am so used to bash and already have a
 great bash configuration, I haven't really tried to make the switch yet.
