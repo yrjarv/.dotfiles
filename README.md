@@ -33,24 +33,8 @@ Tampermonkey in your browser.
 
 ### `bash_profile` and `bashrc`
 
-These work together to allow me to use my `.bashrc` configuration:
-`bash_profile/.bash_profile` ensures that `.bashrc` is sourced, and `.bashrc`
-provides all the customization I need.
-
-My `.bashrc` is a bit of a mess, containing a lot of aliases I use daily.
-Because UiO servers don't have all the programs I use installed on them, quite a
-few aliases are "hidden" behind an if statement, checking if I am on my own
-system or a UiO server.
-
-There are also a few aliases that won't work for anyone else without
-modification, such as my `uio-sftp` function - which uses my username to ssh
-into the UiO SFTP servers.
-
-I also have a few aliases and functions for simplifying my git workflow: I have
-one repository for each of the courses I take, and `cd`-ing between all of them
-just to make sure all my changes are pushed would take too long. So I have three
-aliases: `push`, `pull`, and `status`, all of which run their respective `git`
-commands in all the git repositories directly inside `~`.
+I only keep this around for historical purposes, as I have now (hopefully) fully
+made the switch to Zsh. My `.bashrc` file is a mess, but it served me well.
 
 ### `clang-format`
 
@@ -72,6 +56,7 @@ This is where most of the good stuff is.
 * `.config/kitty` is a very simple config file for kitty, mostly to make it look
   even more minimalistic than it is by default.
 * `.config/waybar` contains my _very_ minimalistic Waybar config: It is black
+great bash configuration, I haven't really tried to make the switch yet.
   with white text, and absolutely no icons.
 
 ### `emacs.d`
@@ -118,6 +103,26 @@ decent tmux configuration.
 
 ### `zshrc`
 
-I am also trying to use zsh, but because I am so used to bash and already have a
-great bash configuration, I haven't really tried to make the switch yet.
+I use Oh My Zsh, which can be installed with the following command:
+
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+The part of `.zshrc` I have made by myself is a bit of a mess, containing a lot
+of aliases I use daily.
+
+Because UiO servers don't have all the programs I use installed on them, quite a
+few aliases are "hidden" behind an if statement, checking if I am on my own
+system or a UiO server.
+
+There are also a few aliases that won't work for anyone else without
+modification, such as my `uio-sftp` function - which uses my username to ssh
+into the UiO SFTP servers.
+
+I also have a few aliases and functions for simplifying my git workflow: I have
+one repository for each of the courses I take, and `cd`-ing between all of them
+just to make sure all my changes are pushed would take too long. So I have three
+aliases: `push`, `pull`, and `status`, all of which run their respective `git`
+commands in all the git repositories directly inside `~`.
 
