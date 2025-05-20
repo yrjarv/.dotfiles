@@ -96,4 +96,4 @@ export MANSECT="2:3:1:8:5:4:7:6:9:3P" # Prevents Posix syscall manual from being
 PROMPT='(%*) [%n@%m %~]$ '
 
 # Oh My Zsh
-source $ZSH/oh-my-zsh.sh
+source .oh-my-zsh/oh-my-zsh.sh
