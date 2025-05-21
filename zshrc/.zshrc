@@ -1,5 +1,8 @@
 [[ $- != *i* ]] && return
 
+# Oh My Zsh
+source .oh-my-zsh/oh-my-zsh.sh
+
 # Default aliases
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
@@ -94,6 +97,3 @@ export MANSECT="2:3:1:8:5:4:7:6:9:3P" # Prevents Posix syscall manual from being
 
 # Prompt (`(HH:MM:SS) [user@hostname directory]`)
 PROMPT='(%*) [%n@%m %~]$ '
-
-# Oh My Zsh
-source .oh-my-zsh/oh-my-zsh.sh
