@@ -15,15 +15,7 @@ else
     # Oh My Zsh
     source $HOME/.oh-my-zsh/oh-my-zsh.sh
     # Important aliases requiring other programs to be installed
-    unalias ll
-    function ll() { # Hacky solution, sometimes eza -T -L=1 shows child directories and sometimes not
-	            # This makes that behaviour consistent
-	local append=$*
-        if [[ -z $1 ]]; then
-	    append="."
-	fi
-	eza -lghT --git-repos --git -L=1 --icons --hyperlink --group-directories-first $append
-    }
+	alias ll='eza -lghT --git-repos --git -L=0 --icons --hyperlink --group-directories-first'
     alias tree='ll -L=10'
     alias cat='bat --style=plain --paging=always'
     eval $(thefuck --alias fuck)
