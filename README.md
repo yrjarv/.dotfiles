@@ -112,9 +112,17 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 The part of `.zshrc` I have made by myself is a bit of a mess, containing a lot
 of aliases I use daily.
 
-Because UiO servers don't have all the programs I use installed on them, quite a
-few aliases are "hidden" behind an if statement, checking if I am on my own
-system or a UiO server.
+Because my Kali VM's don't have all the programs I use installed on them, quite
+a few aliases are "hidden" behind an if statement, checking if I am on my own
+system or a Kali VM.
+
+Additionally, there are some weird quirks with how I deal with Ifi servers: I
+have a few binaries in `~/.binaries/bin`, because I can neither install nor
+upgrade with `dnf` on them (no sudo permissions), which is why I prepend
+`~/.binaries/bin` to PATH. Additionally, `eza` behaves slightly differently when
+running `eza -T -L=x` (where `x` is a number) on the servers vs. my own systems.
+I don't know why, but my workaround is having a different alias on the servers
+and all the other systems.
 
 There are also a few aliases that won't work for anyone else without
 modification, such as my `uio-sftp` function - which uses my username to ssh
