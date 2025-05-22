@@ -1,18 +1,29 @@
 [[ $- != *i* ]] && return
 
+# Binaries for systems without sudo permission
+export PATH=$PATH:~/.binaries
+
 # Default aliases
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
 # Aliases that won't work on UiO servers
 host=$(cat /etc/hostname)
-if [[ $host == *uio* || $host == *kali* ]]; then # if on UiO server or Kali VM
+if [[ $host == *kali* ]]; then # if on Kali VM
     alias ll='ls -lh'
 else
-	# Oh My Zsh
-	source .oh-my-zsh/oh-my-zsh.sh
-	# Aliases wih programs specific for self-managed installations
-    alias ll='eza -lghT --git-repos --git -L=1 --icons --hyperlink --group-directories-first'
+    # Oh My Zsh
+    source $HOME/.oh-my-zsh/oh-my-zsh.sh
+    # Important aliases requiring other programs to be installed
+    unalias ll
+    function ll() { # Hacky solution, sometimes eza -T -L=1 shows child directories and sometimes not
+	            # This makes that behaviour consistent
+	local append=$*
+        if [[ -z $1 ]]; then
+	    append="."
+	fi
+	eza -lghT --git-repos --git -L=1 --icons --hyperlink --group-directories-first $append
+    }
     alias tree='ll -L=10'
     alias cat='bat --style=plain --paging=always'
     eval $(thefuck --alias fuck)
@@ -50,7 +61,6 @@ alias emacs='emacs -nw' # To make emacs behave like vim/neovim when in the termi
 # can choose which one to connect to - or be assigned one randomly through
 # sftp.uio.no
 function uio-sftp() {
-    local hostname
     if [[ -z $1 ]]; then
 	sftp yrjarv@sftp.uio.no
     else
