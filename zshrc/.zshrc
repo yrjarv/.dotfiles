@@ -1,7 +1,7 @@
 [[ $- != *i* ]] && return
 
 # Binaries for systems without sudo permission
-export PATH=$PATH:~/.binaries
+export PATH=~/.binaries/bin:$PATH
 
 # Default aliases
 alias ls='ls --color=auto'
