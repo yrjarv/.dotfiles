@@ -1,8 +1,5 @@
 [[ $- != *i* ]] && return
 
-# Oh My Zsh
-source .oh-my-zsh/oh-my-zsh.sh
-
 # Default aliases
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
@@ -12,6 +9,9 @@ host=$(cat /etc/hostname)
 if [[ $host == *uio* || $host == *kali* ]]; then # if on UiO server or Kali VM
     alias ll='ls -lh'
 else
+	# Oh My Zsh
+	source .oh-my-zsh/oh-my-zsh.sh
+	# Aliases wih programs specific for self-managed installations
     alias ll='eza -lghT --git-repos --git -L=1 --icons --hyperlink --group-directories-first'
     alias tree='ll -L=10'
     alias cat='bat --style=plain --paging=always'
