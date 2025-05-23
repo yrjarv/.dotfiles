@@ -43,8 +43,6 @@ to automatically format my `c` programs.
 
 ### `config`
 
-This is where most of the good stuff is.
-
 * `.config/btop` and `.config/htop` contain config files for `htop` and `btop`,
   but they are mainly modified through the `btop` and `htop` TUIs. I track them
   with git because misclicks happen, and especially in `btop` I find it really
@@ -74,10 +72,10 @@ be a contributor to all your repositories...).
 
 The main purpose of my `.gitconfig` file is to have a few aliases:
 
-* `git last -X`, where `X` is the number of commits to show, limits the amount
+* `last -X`, where `X` is the number of commits to show, limits the amount
   of commits shown with `git log`: You might not want all the commits, only e.g.
   the hash of the previous one - in which case you can run `git last -1`.
-* `git oneline` is the same as `git log --oneline`, but slightly quicker to
+* `oneline` is the same as `git log --oneline`, but slightly quicker to
   write.
 * `aco "MESSAGE"` - my most used alias, it stages all modified files and commits
   them with the message you choose.
@@ -98,8 +96,8 @@ acces the department's `guanin` server.
 
 ### `tmux.conf`
 
-I am trying to learn to use tmux, so this is where I am trying to create a
-decent tmux configuration.
+I am trying to learn to use tmux, so this is where I am trying to create a tmux
+configuration.
 
 ### `zshrc`
 
