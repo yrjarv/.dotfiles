@@ -27,6 +27,10 @@ else
     alias cat='bat --style=plain --paging=always'
     eval $(thefuck --alias fuck)
     eval $(thefuck --alias faen)
+
+	# Use bat as man pager
+    export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+    export MANROFFOPT="-c"
 fi
 
 # Aliases to quickly change directories
