@@ -142,3 +142,12 @@ just to make sure all my changes are pushed would take too long. So I have three
 aliases: `push`, `pull`, and `status`, all of which run their respective `git`
 commands in all the git repositories directly inside `~`.
 
+An additional "weird" thing I have done with my `.zshrc`: I have a command (`(ll
+-L=2 &) > /dev/null`) at the bottom. This is pretty much the same as `tree` -
+except with a lot fewer files being loaded. The reason for this is that the file
+system on the Ifi servers is very slow (all the files are on one physical
+server, which is connected to all the computing servers), so by accessing most
+of my files in the background when logging in, the files I am most likely to
+need are cached. I have zero proof that that's what happens, but the access
+times are dramatically reduced after adding that line - so I assume that it
+helps.
