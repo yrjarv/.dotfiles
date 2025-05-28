@@ -90,9 +90,19 @@ The main purpose of my `.gitconfig` file is to have a few aliases:
 ### `ssh`
 
 My `.ssh/config` file probably isn't very useful for anyone else, except maybe
-a few people at IFI: It is very repetetive, but allows me to run `ssh guanin`
-instead of `ssh yrjarv@guanin.uio.no -J yrjarv@login.uio.no` when I want to
+a few people at ifi: It is very repetetive, but allows me to run `ssh guanin`
+instead of `ssh yrjarv@guanin.uio.no -J yrjarv@morgoth.uio.no` when I want to
 acces the department's `guanin` server.
+
+I have set the default jumphost for ifi servers to be `morgoth`, for two
+reasons:
+
+1. It is physically located in the department's basement, so it's about 100
+   meters away from me - compared to `gothmog`, which is in the city center.
+2. When I use `ssh` at home, I need to use 2fa to get into the jumphost. But:
+   UiO servers are configured to cache 2fa for a while. So if I concistently use
+   the same jumphost server, I can utilize the 2fa caching fully.
+
 
 ### `tmux.conf`
 
