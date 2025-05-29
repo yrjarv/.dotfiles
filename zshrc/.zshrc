@@ -47,6 +47,7 @@ alias lla='ll -a'
 alias la='ls -a'
 alias treea='tree -a -I .git'
 alias treeag='tree -a'
+alias llread="lla --no-symlinks | grep '^.\{4\}r'" # To check read permissions
 
 # Nice to have
 alias calendar='cal -wym'   # Calendar for the whole year
