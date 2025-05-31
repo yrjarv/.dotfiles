@@ -15,13 +15,9 @@ else
     # Oh My Zsh
     source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
-	# ll (eza) behaves differently on ifi servers and my own systems
-	if [[ $host == *uio* ]]; then # if on any UiO server
-	    alias ll='eza -lghT --git-repos --git -L=0 --icons --hyperlink --group-directories-first'
-	else
-	    alias ll='eza -lghT --git-repos --git -L=1 --icons --hyperlink --group-directories-first'
-	fi
-
+	# A better alternative to `ls -l`
+	alias ll='eza -lghT --git-repos --git -L=0 --icons --hyperlink --group-directories-first'
+	
     # Important aliases requiring other programs to be installed
     alias tree='ll -L=10'
     alias cat='bat --style=plain --paging=always'
