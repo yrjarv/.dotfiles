@@ -30,9 +30,7 @@ else
 fi
 
 # Aliases to quickly change directories
-alias 1010='cd ~/in1010'
-alias 1030='cd ~/in1030'
-alias 2140='cd ~/in2140'
+alias 1010='cd ~/in1010/eksamen'
 alias 2010='cd ~/in2010'
 alias 2090='cd ~/in2090'
 alias 3210='cd ~/in3210'
