@@ -48,7 +48,7 @@ alias gduroot='gdu / --ignore-dirs "/home/y/virtualbox,/mnt,/dev,/run"' # Ignore
 
 # Neovim
 alias n='nvim'
-alias nconf='cd ~/nvim/config/.config/nvim'
+alias nconf='cd ~/.nvim/config/.config/nvim'
 
 # Programs
 alias todo='~/todo/todo.py' # For my own todolist script
