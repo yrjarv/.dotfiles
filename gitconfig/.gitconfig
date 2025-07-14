@@ -3,6 +3,7 @@
     oneline = log --oneline
 	aco = "!git add . && git commit -m"
 	taco = "!git add . && git commit -m"
+	amend = "!git add . && git commit --amend"
 	word-diff = diff --word-diff
     graph = log --all --decorate --oneline --graph --abbrev-commit
     contributors = shortlog --summary --numbered --email --all
