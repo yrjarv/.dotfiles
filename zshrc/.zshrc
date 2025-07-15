@@ -55,6 +55,7 @@ alias todo='~/todo/todo.py' # For my own todolist script
 alias ida='/opt/ida-free-pc*/ida' # For some reason, this isn't in PATH and I am too lazy to fix it
 alias emacs='emacs -nw' # To make emacs behave like vim/neovim when in the terminal
 alias py='python3' # Python3 takes too long to type, and I use python as my calculator
+alias k='kubectl' # kubectl takes too long to write
 
 # SFTP into UiO file server
 # There are two servers, sftp1.uio.no and stfp2.uio.no. With this function, I
