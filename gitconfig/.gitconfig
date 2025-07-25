@@ -1,13 +1,19 @@
 [alias]
 	last = log -1 HEAD
     oneline = log --oneline
+
 	aco = "!git add . && git commit -m"
-	taco = "!git add . && git commit -m"
+	taco = aco
+
 	amend = "!git add . && git commit --amend"
 	word-diff = diff --word-diff
+	
     graph = log --all --decorate --oneline --graph --abbrev-commit
+    grpah = graph
+
     contributors = shortlog --summary --numbered --email --all
 
+	puuush = push --force
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
