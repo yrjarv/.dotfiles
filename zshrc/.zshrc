@@ -70,13 +70,11 @@ function uio-sftp() {
 }
 
 # Git
-# These aliases perform actions in all git repos directly inside ~, except
-# ~/internsystem-v2, because that is a shared project where I want manually do
-# any changes to upstream or origin.
-alias push='find ./ -maxdepth 2 -type d -name ".git" ! -path "*/internsystem-v2/.git" -exec sh -c '\''cd "$(dirname "{}")" && echo "In directory: $(pwd)" && git push'\'' \;'
-alias pull='find ./ -maxdepth 2 -type d -name ".git" ! -path "*/internsystem-v2/.git" -exec sh -c '\''cd "$(dirname "{}")" && echo "In directory: $(pwd)" && git pull'\'' \;'
+# These aliases perform actions in all git repos directly inside ~
+alias push='find ~/ -maxdepth 2 -type d -name ".git" -exec sh -c '\''cd "$(dirname "{}")" && echo "In directory: $(pwd)" && git push'\'' \;'
+alias pull='find ./ -maxdepth 2 -type d -name ".git" -exec sh -c '\''cd "$(dirname "{}")" && echo "In directory: $(pwd)" && git pull'\'' \;'
 function status() {
-  find ./ -maxdepth 2 -type d -name ".git" ! -path "*/internsystem-v2/.git" -exec sh -c '
+  find ./ -maxdepth 2 -type d -name ".git" -exec sh -c '
     cd "$(dirname "$1")" || exit
     branch_status=$(git status -sb | grep -E "ahead|behind")
     worktree_status=$(git status --short)
