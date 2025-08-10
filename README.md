@@ -87,6 +87,8 @@ The main purpose of my `.gitconfig` file is to have a few aliases:
   contributors (if the email addresses are different, they are separated)
   alongside the number of commits they have made.
 
+Additionally, all commits are should automatically get signed.
+
 ### `ssh`
 
 My `.ssh/config` file probably isn't very useful for anyone else, except maybe

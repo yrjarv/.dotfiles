@@ -14,11 +14,20 @@
     contributors = shortlog --summary --numbered --email --all
 
 	puuush = push --force
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
 [user]
 	name = Yrjar Vederhus
 	email = yrjar@yrjar.tech
+	signingkey = ~/.ssh/id_ed25519.pub
+
+[commit]
+	gpgsign = true
+
+[gpg]
+	format = ssh
