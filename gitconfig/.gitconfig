@@ -31,3 +31,6 @@
 
 [gpg]
 	format = ssh
+
+[advice]
+	detachedHead = false
