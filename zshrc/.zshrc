@@ -45,6 +45,7 @@ alias llread="lla --no-symlinks | grep '^.\{4\}r'" # To check read permissions
 # Nice to have
 alias calendar='cal -wym'   # Calendar for the whole year
 alias gduroot='gdu / --ignore-dirs "/home/y/virtualbox,/mnt,/dev,/run"' # Ignore some large directories in GDU
+alias 2090-db='psql -h dbpg-ifi-kurs03 -U yrjarv -d'
 
 # Neovim
 alias n='nvim'
