@@ -33,6 +33,7 @@ fi
 alias 2010='cd ~/in2010'
 alias 2090='cd ~/in2090'
 alias 3210='cd ~/in3210'
+alias 5290='cd ~/in5290'
 alias web='cd ~/website/src'
 
 # Listing directories
