@@ -8,26 +8,17 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
 # Aliases that won't work on UiO servers
-host=$(cat /etc/hostname)
-if [[ $host == *kali* ]]; then # if on Kali VM
-    alias ll='ls -lh'
-else
-    # Oh My Zsh
-    source $HOME/.oh-my-zsh/oh-my-zsh.sh
+alias ll='eza -lghT --git-repos --git -L=1 --icons --hyperlink --group-directories-first'
 
-	# A better alternative to `ls -l`
-	alias ll='eza -lghT --git-repos --git -L=1 --icons --hyperlink --group-directories-first'
-	
-    # Important aliases requiring other programs to be installed
-    alias tree='ll -L=10'
-    alias cat='bat --style=plain --paging=always'
-    eval $(thefuck --alias fuck)
-    eval $(thefuck --alias faen)
+# Important aliases requiring other programs to be installed
+alias tree='ll -L=10'
+alias cat='bat --style=plain --paging=always'
+eval $(thefuck --alias fuck)
+eval $(thefuck --alias faen)
 
-	# Use bat as man pager
-    export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-    export MANROFFOPT="-c"
-fi
+# Use bat as man pager
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANROFFOPT="-c"
 
 # Aliases to quickly change directories
 alias 2010='cd ~/in2010'
@@ -35,6 +26,7 @@ alias 2090='cd ~/in2090'
 alias 3210='cd ~/in3210'
 alias 5290='cd ~/in5290'
 alias web='cd ~/website/src'
+alias ..='cd ..'
 
 # Listing directories
 alias lla='ll -a'
@@ -56,8 +48,7 @@ alias nconf='cd ~/.nvim/config/.config/nvim'
 # Programs
 alias todo='~/todo/todo.py' # For my own todolist script
 alias ida='/opt/ida-free-pc*/ida' # For some reason, this isn't in PATH and I am too lazy to fix it
-alias emacs='emacs -nw' # To make emacs behave like vim/neovim when in the terminal
-alias py='python3' # Python3 takes too long to type, and I use python as my calculator
+alias py='python3' # python3 takes too long to type, and I use python as my calculator
 alias k='kubectl' # kubectl takes too long to write
 
 # SFTP into UiO file server
@@ -98,12 +89,7 @@ function forever() {
     while true; do $*; done
 }
 
-# Makes keybinds behave more like bash
-bindkey -e
-
-# Completion
-autoload compinit && compinit
-
+# Exported variables
 export EDITOR="/usr/bin/nvim" # Instead of nano
 export MANSECT="2:3:1:8:5:4:7:6:9:3P" # Prevents Posix syscall manual from being default
 
@@ -112,3 +98,49 @@ PROMPT='(%*) [%n@%m %~]$ '
 
 # Make the computer/server cache a lot of files when a new terminal is opened
 (tree &) > /dev/null
+
+# Syntax highlighting
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Completion
+autoload compinit && compinit
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Fix bck-i-search
+HISTFILE=~/.zsh_history
+HISTSIZE=100000
+
+# Search pacman when a command is not found
+function command_not_found_handler {
+    local purple='\e[1;35m' bright='\e[0;1m' green='\e[1;32m' reset='\e[0m'
+    printf 'zsh: command not found: %s\n' "$1"
+    local entries=(
+        ${(f)"$(/usr/bin/pacman -F --machinereadable -- "/usr/bin/$1")"}
+    )
+    if (( ${#entries[@]} ))
+    then
+        printf "${bright}$1${reset} may be found in the following packages:\n"
+        local pkg
+        for entry in "${entries[@]}"
+        do
+            # (repo package version file)
+            local fields=(
+                ${(0)entry}
+            )
+            if [[ "$pkg" != "${fields[2]}" ]]
+            then
+                printf "${purple}%s/${bright}%s ${green}%s${reset}\n" "${fields[1]}" "${fields[2]}" "${fields[3]}"
+            fi
+            printf '    /%s\n' "${fields[4]}"
+            pkg="${fields[2]}"
+        done
+    fi
+    return 127
+}
+
+# Keybinds
+bindkey '^[[3;5~' kill-word
+bindkey '^H' backward-kill-word
+bindkey '^[[3~' delete-char
+bindkey '^[[1;5C' forward-word
+bindkey '^[[1;5D' backward-word

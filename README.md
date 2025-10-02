@@ -113,18 +113,7 @@ configuration.
 
 ### `zshrc`
 
-I use Oh My Zsh, which can be installed with the following command:
-
-```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-
-The part of `.zshrc` I have made by myself is a bit of a mess, containing a lot
-of aliases I use daily.
-
-Because my Kali VM's don't have all the programs I use installed on them, quite
-a few aliases are "hidden" behind an if statement, checking if I am on my own
-system or a Kali VM.
+This is my slightly messy shell config.
 
 Additionally, there are some weird quirks with how I deal with Ifi servers: I
 have a few binaries in `~/.binaries/bin`, because I can neither install nor
