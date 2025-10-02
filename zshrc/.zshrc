@@ -99,12 +99,16 @@ PROMPT='(%*) [%n@%m %~]$ '
 # Make the computer/server cache a lot of files when a new terminal is opened
 (tree &) > /dev/null
 
-# Syntax highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# Completion
+# Built-in completion
 autoload compinit && compinit
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Sourcing plugins not available on UiO servers
+if [[ $(cat /etc/hostname) != *uio* ]]; then
+	# Syntax highlighting
+	source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+	# Completion
+	source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
 
 # Fix bck-i-search
 HISTFILE=~/.zsh_history
