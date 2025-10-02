@@ -37,3 +37,7 @@
 
 [push]
 	autosetupremote = true
+
+[init]
+	defaultBranch = main
+
