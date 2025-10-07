@@ -108,6 +108,8 @@ if [[ $(cat /etc/hostname) != *uio* ]]; then
 	source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 	# Completion
 	source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+	# Vim mode
+	source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 fi
 
 # Fix bck-i-search
