@@ -8,7 +8,8 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
 # Aliases that won't work on UiO servers
-alias ll='eza -lghT --git-repos --git -L=1 --icons --hyperlink --group-directories-first'
+alias ll='eza -lghT --git-repos --git -L=1 --icons --hyperlink\
+	--group-directories-first'
 
 # Important aliases requiring other programs to be installed
 alias tree='ll -L=10'
@@ -36,10 +37,13 @@ alias treeag='tree -a'
 alias llread="lla --no-symlinks | grep '^.\{4\}r'" # To check read permissions
 
 # Nice to have
-alias calendar='cal -wym'   # Calendar for the whole year
-alias gduroot='gdu / --ignore-dirs "/home/y/virtualbox,/mnt,/dev,/run,/usr/share/wordlists"' # Ignore some large directories in GDU
+alias calendar='cal -wym' # Calendar for the whole year
+alias gduroot='gdu / --ignore-dirs\
+	"/home/y/virtualbox,/mnt,/dev,/run,/usr/share/wordlists"' # Ignore some
+	# large directories in GDU
 alias 2090-db='psql -h dbpg-ifi-kurs03 -U yrjarv -d'
-alias eduroam-sucks='nmcli connection down eduroam && nmcli connection up eduroam'
+alias eduroam-sucks='nmcli connection down eduroam && nmcli connection up\
+	eduroam'
 
 # Neovim
 alias n='nvim'
@@ -47,8 +51,9 @@ alias nconf='cd ~/.nvim/config/.config/nvim'
 
 # Programs
 alias todo='~/todo/todo.py' # For my own todolist script
-alias ida='/opt/ida-free-pc*/ida' # For some reason, this isn't in PATH and I am too lazy to fix it
-alias py='python3' # python3 takes too long to type, and I use python as my calculator
+alias ida='/opt/ida-free-pc*/ida' # This isn't in PATH and I am too lazy to fix
+							      # it
+alias py='python3' # python3 takes too long to type
 alias k='kubectl' # kubectl takes too long to write
 
 # SFTP into UiO file server
@@ -63,10 +68,11 @@ function uio-sftp() {
     fi
 }
 
-# Git
-# These aliases perform actions in all git repos directly inside ~
+# These aliases perform actions in all git repos directly inside the current
+# directory
 alias push='find ~/ -maxdepth 2 -type d -name ".git" -exec sh -c '\''cd "$(dirname "{}")" && echo "In directory: $(pwd)" && git push'\'' \;'
 alias pull='find ./ -maxdepth 2 -type d -name ".git" -exec sh -c '\''cd "$(dirname "{}")" && echo "In directory: $(pwd)" && git pull'\'' \;'
+
 function status() {
   find ./ -maxdepth 2 -type d -name ".git" -exec sh -c '
     cd "$(dirname "$1")" || exit
@@ -91,7 +97,7 @@ function forever() {
 
 # Exported variables
 export EDITOR="/usr/bin/nvim" # Instead of nano
-export MANSECT="2:3:1:8:5:4:7:6:9:3P" # Prevents Posix syscall manual from being default
+export MANSECT="2:3:1:8:5:4:7:6:9:3P" # Prevents all results from being from 3P
 
 # Prompt (`(HH:MM:SS) [user@hostname directory]`)
 PROMPT='(%*) [%n@%m %~]$ '
