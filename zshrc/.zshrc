@@ -55,6 +55,7 @@ alias ida='/opt/ida-free-pc*/ida' # This isn't in PATH and I am too lazy to fix
 							      # it
 alias py='python3' # python3 takes too long to type
 alias k='kubectl' # kubectl takes too long to write
+alias icat='kitten icat' # To show images in Kitty
 
 # SFTP into UiO file server
 # There are two servers, sftp1.uio.no and stfp2.uio.no. With this function, I
