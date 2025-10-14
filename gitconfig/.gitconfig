@@ -1,43 +1,45 @@
 [alias]
-	last = log -1 HEAD
+    last = log -1 HEAD
     oneline = log --oneline
 
-	aco = "!git add . && git commit -m"
-	taco = aco
+    aco = "!git add . && git commit -m"
+    taco = aco
 
-	amend = "!git add . && git commit --amend"
-	word-diff = diff --word-diff
+    amend = "!git add . && git commit --amend"
+    word-diff = diff --word-diff
 	
     graph = log --all --decorate --oneline --graph --abbrev-commit
     grpah = graph
 
     contributors = shortlog --summary --numbered --email --all
 
-	puuush = push --force
+    puuush = push --force
 
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
 
 [user]
-	name = Yrjar Vederhus
-	email = yrjar@yrjar.tech
-	signingkey = ~/.ssh/id_ed25519
+    name = Yrjar Vederhus
+    email = yrjar@yrjar.tech
+    signingkey = ~/.ssh/id_ed25519
 
 [commit]
-	gpgsign = true
+    gpgsign = true
 
 [gpg]
-	format = ssh
+    format = ssh
 
 [advice]
-	detachedHead = false
+    detachedHead = false
 
 [push]
-	autosetupremote = true
+    autosetupremote = true
 
 [init]
-	defaultBranch = main
+    defaultBranch = main
 
+[core]
+    editor = nvim
