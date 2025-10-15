@@ -14,6 +14,7 @@ alias ll='eza -lghT --git-repos --git -L=1 --icons --hyperlink\
 # Important aliases requiring other programs to be installed
 alias tree='ll -L=10'
 alias cat='bat --style=plain --paging=always'
+alias codecat='bat --style=plain -n'
 eval $(thefuck --alias fuck)
 eval $(thefuck --alias faen)
 
