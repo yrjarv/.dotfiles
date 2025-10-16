@@ -109,6 +109,7 @@ PROMPT='(%*) [%n@%m %~]$ '
 
 # Built-in completion
 autoload compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # Sourcing plugins not available on UiO servers
 if [[ $(cat /etc/hostname) != *uio* ]]; then
