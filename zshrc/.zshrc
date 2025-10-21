@@ -124,6 +124,9 @@ fi
 # Fix bck-i-search
 HISTFILE=~/.zsh_history
 HISTSIZE=100000
+SAVEHIST=100000
+setopt INC_APPEND_HISTORY
+setopt HIST_IGNORE_DUPS
 
 # Keybinds
 bindkey '^[[3;5~' kill-word
