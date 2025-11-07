@@ -42,7 +42,7 @@ alias calendar='cal -wym' # Calendar for the whole year
 alias gduroot='gdu / --ignore-dirs\
 	"/home/y/virtualbox,/mnt,/dev,/run,/usr/share/wordlists"' # Ignore some
 	# large directories in GDU
-alias 2090-db='psql -h dbpg-ifi-kurs03 -U yrjarv -d'
+alias 2090-db='PAGER="bat --style=plain --paging=always" psql -h dbpg-ifi-kurs03 -U yrjarv -d'
 alias eduroam-sucks='nmcli connection down eduroam && nmcli connection up\
 	eduroam'
 
