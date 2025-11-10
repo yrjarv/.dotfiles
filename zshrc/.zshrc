@@ -45,6 +45,7 @@ alias gduroot='gdu / --ignore-dirs\
 alias 2090-db='PAGER="bat --style=plain --paging=always" psql -h dbpg-ifi-kurs03 -U yrjarv -d'
 alias eduroam-sucks='nmcli connection down eduroam && nmcli connection up\
 	eduroam'
+alias pdf='termpdf -kitty'
 
 # Neovim
 alias n='nvim'
