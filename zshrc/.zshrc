@@ -71,6 +71,18 @@ function uio-sftp() {
     fi
 }
 
+# Bulk run commands on all IFI servers
+function ifi-control-panel() {
+    local session_id=$(cat /proc/sys/kernel/random/uuid)
+    tmux new-session -d -s "$session_id" "ssh guanin -t -i $@"
+    tmux split-window -h "ssh sytosin -t -i $@"
+    tmux split-window -v "ssh adenin -t -i $@"
+    tmux select-pane -t 0
+    tmux split-window -v "ssh tymin -t -i $@"
+    tmux select-layout tiled
+    tmux attach-session -t "$session_id"
+}
+
 # These aliases perform actions in all git repos directly inside the current
 # directory
 alias push='find ~/ -maxdepth 2 -type d -name ".git" -exec sh -c '\''cd "$(dirname "{}")" && echo "In directory: $(pwd)" && git push'\'' \;'
