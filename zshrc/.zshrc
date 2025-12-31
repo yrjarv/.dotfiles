@@ -53,6 +53,7 @@ alias nconf='cd ~/.nvim/config/.config/nvim'
 
 # Programs
 alias todo='~/todo/todo.py' # For my own todolist script
+alias ttr='~/ttr/ttr' # For my own todolist script
 alias ida='/opt/ida-free-pc*/ida' # This isn't in PATH and I am too lazy to fix
 							      # it
 alias py='python3' # python3 takes too long to type
