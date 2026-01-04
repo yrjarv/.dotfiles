@@ -125,9 +125,6 @@ PROMPT='(%*) [%n@%m %~]$ '
 autoload compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
-# Dotglob - allows autocomplete and * to match .files
-setopt dotglob
-
 # Sourcing plugins not available on UiO servers
 if [[ $(cat /etc/hostname) != *uio* ]]; then
 	# Syntax highlighting
