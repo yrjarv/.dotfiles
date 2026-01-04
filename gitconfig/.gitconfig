@@ -24,7 +24,7 @@
 [user]
     name = Yrjar Vederhus
     email = yrjar@yrjar.tech
-    signingkey = ~/.ssh/id_ed25519
+    signingkey = ~/.ssh/keys/git
 
 [commit]
     gpgsign = true

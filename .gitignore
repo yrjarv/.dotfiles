@@ -1,3 +1,6 @@
 vim/vim/plugged/
 /vim/.vim/plugged
 vim/.vim/.netrwhist
+
+ssh/.ssh/keys
+ssh/.ssh/known_hosts*
