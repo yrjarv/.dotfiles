@@ -23,10 +23,8 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"
 
 # Aliases to quickly change directories
-alias 2010='cd ~/in2010'
-alias 2090='cd ~/in2090'
-alias 3210='cd ~/in3210'
-alias 5290='cd ~/in5290'
+alias 2000='cd ~/in2000'
+alias 3240='cd ~/in3240'
 alias web='cd ~/website/src'
 alias ..='cd ..'
 
@@ -42,7 +40,6 @@ alias calendar='cal -wym' # Calendar for the whole year
 alias gduroot='gdu / --ignore-dirs\
 	"/home/y/virtualbox,/mnt,/dev,/run,/usr/share/wordlists"' # Ignore some
 	# large directories in GDU
-alias 2090-db='PAGER="bat --style=plain --paging=always" psql -h dbpg-ifi-kurs03 -U yrjarv -d'
 alias eduroam-sucks='nmcli connection down eduroam && nmcli connection up\
 	eduroam'
 alias pdf='termpdf -kitty'
@@ -70,18 +67,6 @@ function uio-sftp() {
     else
 	sftp yrjarv@sftp"$1".uio.no
     fi
-}
-
-# Bulk run commands on all IFI servers
-function ifi-control-panel() {
-    local session_id=$(cat /proc/sys/kernel/random/uuid)
-    tmux new-session -d -s "$session_id" "ssh guanin -t -i $@"
-    tmux split-window -h "ssh sytosin -t -i $@"
-    tmux split-window -v "ssh adenin -t -i $@"
-    tmux select-pane -t 0
-    tmux split-window -v "ssh tymin -t -i $@"
-    tmux select-layout tiled
-    tmux attach-session -t "$session_id"
 }
 
 # These aliases perform actions in all git repos directly inside the current
