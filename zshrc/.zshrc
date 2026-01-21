@@ -43,6 +43,8 @@ alias gduroot='gdu / --ignore-dirs\
 alias eduroam-sucks='nmcli connection down eduroam && nmcli connection up\
 	eduroam'
 alias pdf='termpdf -kitty'
+alias krepl='kotlin -Xrepl'
+alias hypr='start-hyprland'
 
 # Neovim
 alias n='nvim'
