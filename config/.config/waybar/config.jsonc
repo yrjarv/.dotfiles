@@ -29,13 +29,13 @@
   "cpu": {
     "format": "CPU: {usage}%",
     "tooltip": true,
-    "interval": 0.1,
+    "interval": 1,
     "on-click": "kitty htop --sort-key PERCENT_CPU"
   },
   "memory": {
     "format": "RAM: {used:0.1f}GB",
     "tooltip": true,
-    "interval": 0.1,
+    "interval": 1,
     "on-click": "kitty htop --sort-key PERCENT_MEM"
   },
 
