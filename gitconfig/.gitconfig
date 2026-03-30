@@ -38,6 +38,9 @@
 [push]
     autosetupremote = true
 
+[fetch]
+    prune = true
+
 [init]
     defaultBranch = main
 
