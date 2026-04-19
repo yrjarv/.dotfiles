@@ -10,6 +10,7 @@
 	
     graph = log --all --decorate --oneline --graph --abbrev-commit
     grpah = graph
+    g2 = graph --decorate-refs-exclude=refs/remotes/private-github
 
     contributors = shortlog --summary --numbered --email --all
 
