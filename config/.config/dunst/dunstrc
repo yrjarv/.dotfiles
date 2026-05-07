@@ -1,0 +1,5 @@
+[global]
+    monitor = 0
+    follow = keyboard
+    width = 300
+    height = (0, 100)
