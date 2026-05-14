@@ -42,6 +42,8 @@ alias gduroot='gdu / --ignore-dirs\
 	# large directories in GDU
 alias krepl='kotlin -Xrepl'
 alias hypr='start-hyprland'
+alias pd='adb shell run-as no.uio.ifi.in2000.team18.titanic\
+    rm files/datastore/userPreferences.preferences_pb'
 
 # Neovim
 alias n='nvim'
