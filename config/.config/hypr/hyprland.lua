@@ -43,8 +43,8 @@ hl.config({
         gaps_out = 0,
         border_size = 1,
         col = {
-            active_border = "rgba(FF00FF00)",
-            inactive_border = "rgba(FF000000)"
+            active_border = 0xFF00FF00,
+            inactive_border = 0xFF000000
         },
     },
     animations = {
@@ -120,7 +120,7 @@ hl.bind("SUPER + SHIFT + O", hl.dsp.exec_cmd(
     "killall -9 Discord ; swaylock -f -c 000000 " ..
     "-i ~/.config/hypr/bsod.png -s stretch -u"
 ))
-hl.bind("SUPER + ALT + SHIFT + O", hl.dsp.exec_cmd("hyprctl dispatch exit"))
+hl.bind("SUPER + ALT + SHIFT + O", hl.dsp.exit())
 
 --- Window management
 ---- General
