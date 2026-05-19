@@ -135,19 +135,31 @@ hl.bind("SUPER + SHIFT + ALT + S", hl.dsp.exec_cmd(
 local vimKeybinds = {
     H = {
         direction = "left",
-        resize = { x = -30, y = 0 },
+        resize = {
+            x = -30, y = 0,
+            xSmall = -1, ySmall = 0
+        },
     },
     J = {
         direction = "down",
-        resize = { x = 0, y = 30 },
+        resize = {
+            x = 0, y = 30,
+            xSmall = 0, ySmall = 1
+        },
     },
     K = {
         direction = "up",
-        resize = { x = 0, y = -30 },
+        resize = {
+            x = 0, y = -30,
+            xSmall = 0, ySmall = -1
+        },
     },
     L = {
         direction = "right",
-        resize = { x = 30, y = 0 },
+        resize = {
+            x = 30, y = 0,
+            xSmall = 1, ySmall = 0
+        },
     },
 }
 for key, cfg in pairs(vimKeybinds) do
@@ -156,8 +168,27 @@ for key, cfg in pairs(vimKeybinds) do
         "SUPER + SHIFT + " .. key,
         hl.dsp.window.move({ direction = cfg.direction })
     )
-    hl.bind("SUPER + ALT + " .. key, hl.dsp.window.resize(cfg.resize))
+    hl.bind(
+        "SUPER + ALT + " .. key,
+        hl.dsp.window.resize({
+            x = cfg.resize.x,
+            y = cfg.resize.y,
+            relative = true
+        }),
+        { repeating = true }
+    )
+    hl.bind(
+        "SUPER + ALT + SHIFT + " .. key,
+        hl.dsp.window.resize({
+            x = cfg.resize.xSmall,
+            y = cfg.resize.ySmall,
+            relative = true,
+        }),
+        { repeating = true }
+    )
 end
+hl.bind("SUPER + mouse:272", hl.dsp.window.drag(),   { mouse = true })
+hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
 ---- Workspaces
 for i = 1, 10 do
     local key = i % 10
