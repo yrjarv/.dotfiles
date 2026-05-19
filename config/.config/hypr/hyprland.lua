@@ -1,6 +1,7 @@
 -- Monitors
 hl.monitor({ -- Local monitor
     output = "eDP-1",
+    mode = "preferred",
     scale = 1
 })
 
@@ -15,22 +16,10 @@ hl.monitor({ -- "Desktop" laptop, disabled
     disabled = true
 })
 
---- IFI setup
-hl.monitor({ -- Left vertical monitor
-    output = "desc:Dell Inc. DELL U2422HE 3TRPH83",
-    position = "-1400x-1440",
-    scale = 1,
-    transform = 3
-})
-hl.monitor({ -- Normal main monitor
-    output = "desc:HP Inc. HP E273q 6CM9441FB1",
-    position = "-320x-1440",
-    scale = 1
-})
-
 --- Fallback
 hl.monitor({
     output = "",
+    mode = "preferred",
     position = "auto-up",
     scale = 1
 })
@@ -39,12 +28,12 @@ hl.monitor({
 
 -- Autostart
 hl.on("hyprland.start", function()
-    hl.dsp.exec_cmd("waybar")
-    hl.dsp.exec_cmd("discord --start-minimized")
-    hl.dsp.exec_cmd("slack -u")
-    hl.dsp.exec_cmd("firefox")
-    hl.dsp.exec_cmd("LD_PRELOAD=/usr/lib/spotify-adblock.so spotify")
-    hl.dsp.exec_cmd("kitty bluetui")
+    hl.exec_cmd("waybar")
+    hl.exec_cmd("discord --start-minimized")
+    hl.exec_cmd("slack -u")
+    hl.exec_cmd("firefox")
+    hl.exec_cmd("LD_PRELOAD=/usr/lib/spotify-adblock.so spotify")
+    hl.exec_cmd("kitty bluetui")
 end)
 
 -- Variables
@@ -54,8 +43,8 @@ hl.config({
         gaps_out = 0,
         border_size = 1,
         col = {
-            active_border = "rgba(ff00ff00)",
-            inactive_border = "rgba(ff000000)"
+            active_border = "rgba(FF00FF00)",
+            inactive_border = "rgba(FF000000)"
         },
     },
     animations = {
