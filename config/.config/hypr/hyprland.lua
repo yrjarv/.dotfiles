@@ -95,16 +95,17 @@ hl.bind("SUPER + S", hl.dsp.exec_cmd(
     "LD_PRELOAD=/usr/lib/spotify-adblock.so spotify")
 )
 hl.bind("SUPER + D", hl.dsp.exec_cmd("discord"))
-hl.bind("SUPER + F", hl.dsp.exec_cmd("libreoffice"))
 hl.bind("SUPER + G", hl.dsp.exec_cmd("gimp"))
+hl.bind("SUPER + V", hl.dsp.exec_cmd("virtualbox"))
 hl.bind("SUPER + B", hl.dsp.exec_cmd("firefox"))
 hl.bind("SUPER + N", hl.dsp.exec_cmd("android-studio"))
-hl.bind("SUPER + M", hl.dsp.exec_cmd("virtualbox"))
+hl.bind("SUPER + M", hl.dsp.exec_cmd("teams-for-linux"))
 ---- Killing
 hl.bind("SUPER + ALT + W", hl.dsp.exec_cmd("killall waybar"))
 hl.bind("SUPER + ALT + A", hl.dsp.exec_cmd("killall slack"))
 hl.bind("SUPER + ALT + S", hl.dsp.exec_cmd("killall spotify"))
 hl.bind("SUPER + ALT + D", hl.dsp.exec_cmd("killall -9 Discord"))
+hl.bind("SUPER + ALT + M", hl.dsp.exec_cmd("killall -9 teams-for-linux"))
 
 --- Misc
 ---- Screenshots
@@ -125,9 +126,9 @@ hl.bind("SUPER + ALT + SHIFT + O", hl.dsp.exit())
 --- Window management
 ---- General
 hl.bind("SUPER + P", hl.dsp.window.pseudo())
+hl.bind("SUPER + F", hl.dsp.window.float({ action = "toggle" }))
 hl.bind("SUPER + X", hl.dsp.layout("togglesplit"))
 hl.bind("SUPER + C", hl.dsp.window.close())
-hl.bind("SUPER + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind("SUPER + SHIFT + ALT + S", hl.dsp.exec_cmd(
     "~/.config/hypr/switch_layout.sh")
 )
