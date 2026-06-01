@@ -37,9 +37,7 @@ alias treeag='tree -a'
 # Nice to have
 alias calendar='cal -wym' # Calendar for the whole year
 alias exact_time='date -Ins' # Date with nanoseconds
-alias gduroot='gdu / --ignore-dirs\
-	"/home/y/virtualbox,/mnt,/dev,/run,/usr/share/wordlists"' # Ignore some
-	# large directories in GDU
+alias gduroot='gdu / --ignore-dirs "/home/y/virtual-security-lab,/home/y/isos,/mnt,/dev,/run,/usr/share/wordlists"'
 alias krepl='kotlin -Xrepl'
 alias hypr='start-hyprland'
 
