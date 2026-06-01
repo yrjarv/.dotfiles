@@ -98,7 +98,6 @@ hl.bind("SUPER + D", hl.dsp.exec_cmd("discord"))
 hl.bind("SUPER + G", hl.dsp.exec_cmd("gimp"))
 hl.bind("SUPER + V", hl.dsp.exec_cmd("virtualbox"))
 hl.bind("SUPER + B", hl.dsp.exec_cmd("firefox"))
-hl.bind("SUPER + N", hl.dsp.exec_cmd("android-studio"))
 hl.bind("SUPER + M", hl.dsp.exec_cmd("teams-for-linux"))
 ---- Killing
 hl.bind("SUPER + ALT + W", hl.dsp.exec_cmd("killall waybar"))
