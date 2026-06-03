@@ -20,7 +20,7 @@ hl.monitor({ -- "Desktop" laptop, disabled
 hl.monitor({
     output = "",
     mode = "preferred",
-    position = "auto-up",
+    position = "auto-center-up",
     scale = 1
 })
 
