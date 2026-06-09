@@ -23,7 +23,7 @@
 
 [user]
     name = Yrjar Vederhus
-    email = yrjar@yrjar.tech
+    email = yrjar.vederhus@klp.no
     signingkey = ~/.ssh/keys/git
 
 [commit]
