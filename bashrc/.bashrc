@@ -96,3 +96,4 @@ source /usr/share/bash-completion/completions/git
 export EDITOR="/usr/bin/nvim" # Instead of nano
 export MANSECT="2:3:1:8:5:4:7:6:9:3P" # Prevents Posix syscall manual from being default
 PS1='[\u@\h \W]\$ ' # Very simple prompt
+export PATH=$PATH:/opt/kalypso/bin

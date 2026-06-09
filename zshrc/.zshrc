@@ -1,7 +1,7 @@
 [[ $- != *i* ]] && return
 
 # Binaries for systems without sudo permission
-export PATH=~/.binaries/bin:$PATH:.
+export PATH=~/.binaries/bin:/opt/kalypso/bin:$PATH:.
 
 # Default aliases
 alias ls='ls --color=auto'
@@ -108,7 +108,7 @@ autoload compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # Sourcing plugins not available on UiO servers
-if [[ $(cat /etc/hostname) != *uio* ]]; then
+if [[ $(cat /etc/hostname) == *arch* ]]; then
 	# Syntax highlighting
 	source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 	# Completion
