@@ -23,10 +23,9 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"
 
 # Aliases to quickly change directories
-alias 2000='cd ~/in2000'
-alias 3240='cd ~/in3240'
-alias web='cd ~/website/src'
-alias ..='cd ..'
+function k() {
+    cd ~/kalypso*"$1"*
+}
 
 # Listing directories
 alias lla='ll -a'
@@ -51,7 +50,6 @@ alias ttr='~/ttr/ttr' # For my own todolist script
 alias ida='/opt/ida-free-pc*/ida' # This isn't in PATH and I am too lazy to fix
 							      # it
 alias py='python3' # python3 takes too long to type
-alias k='kubectl' # kubectl takes too long to write
 alias icat='kitten icat' # To show images in Kitty
 
 # SFTP into UiO file server
