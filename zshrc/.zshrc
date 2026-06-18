@@ -26,6 +26,7 @@ export MANROFFOPT="-c"
 function k() {
     cd ~/kalypso*"$1"*
 }
+alias ..='cd ..'
 
 # Listing directories
 alias lla='ll -a'
