@@ -49,9 +49,9 @@ alias nconf='cd ~/.nvim/config/.config/nvim'
 alias todo='~/todo/todo.py' # For my own todolist script
 alias ttr='~/ttr/ttr' # For my own todolist script
 alias ida='/opt/ida-free-pc*/ida' # This isn't in PATH and I am too lazy to fix
-							      # it
 alias py='python3' # python3 takes too long to type
 alias icat='kitten icat' # To show images in Kitty
+alias idea='/opt/intellij/default/bin/idea.sh' # Again, could be in PATH
 
 # SFTP into UiO file server
 # There are two servers, sftp1.uio.no and stfp2.uio.no. With this function, I
