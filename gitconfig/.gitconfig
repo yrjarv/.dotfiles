@@ -23,7 +23,7 @@
 
 [user]
     name = Yrjar Vederhus
-    email = yrjar.vederhus@klp.no
+    email = yrjar@yrjar.tech
     signingkey = ~/.ssh/keys/git
 
 [commit]
@@ -46,3 +46,6 @@
 
 [core]
     editor = nvim
+
+[includeIf "gitdir:/home/vagrant/"]
+    path = ~/.klp-gitconfig
