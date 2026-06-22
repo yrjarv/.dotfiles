@@ -13,7 +13,7 @@
 
     contributors = shortlog --summary --numbered --email --all
 
-    puuush = push --force
+    puuush = push --force-with-lease
 
 [filter "lfs"]
     clean = git-lfs clean -- %f
