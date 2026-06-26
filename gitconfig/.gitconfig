@@ -6,7 +6,7 @@
     taco = aco
 
     amend = "!git add . && git commit --amend"
-    word-diff = diff --word-diff
+    word-diff = diff --color-words
 	
     graph = log --all --decorate --oneline --graph --abbrev-commit
     grpah = graph
