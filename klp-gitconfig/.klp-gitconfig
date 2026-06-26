@@ -1,3 +1,4 @@
 [user]
     name = Yrjar Vederhus
     email = yrjar.vederhus@klp.no
+    signingkey = ~/.ssh/keys/git
