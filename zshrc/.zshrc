@@ -108,12 +108,18 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # Sourcing plugins not available on UiO servers
 if [[ $(cat /etc/hostname) == *arch* ]]; then
-	# Syntax highlighting
-	source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-	# Completion
-	source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-	# Vim mode
-	source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+    # Syntax highlighting
+    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    # Completion
+    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+    # Vim mode
+    source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+fi
+
+# KC completion (only available on KLP VM):
+
+if [[ $(cat /etc/hostname) == *hefaistos* ]]; then
+    source <(kc completion zsh)
 fi
 
 # Fix bck-i-search
