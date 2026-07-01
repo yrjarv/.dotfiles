@@ -1,7 +1,7 @@
 [[ $- != *i* ]] && return
 
 # Binaries for systems without sudo permission
-export PATH=~/.binaries/bin:/opt/kalypso/bin:$PATH:.
+export PATH=.:~/.binaries/bin:/opt/kalypso/bin:$PATH
 
 # Default aliases
 alias ls='ls --color=auto'
