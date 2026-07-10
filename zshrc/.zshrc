@@ -68,7 +68,7 @@ function uio-sftp() {
 # These aliases perform actions in all git repos directly inside the current
 # directory
 alias push='find ~/ -maxdepth 2 -type d -name ".git" -exec sh -c '\''cd "$(dirname "{}")" && echo "In directory: $(pwd)" && git push'\'' \;'
-alias pull='find ./ -maxdepth 2 -type d -name ".git" -exec sh -c '\''cd "$(dirname "{}")" && echo "In directory: $(pwd)" && git pull'\'' \;'
+alias fetch='find ./ -maxdepth 2 -type d -name ".git" -exec sh -c '\''cd "$(dirname "{}")" && echo "In directory: $(pwd)" && git fetch'\'' \;'
 
 function status() {
   find ./ -maxdepth 2 -type d -name ".git" -exec sh -c '
