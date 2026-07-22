@@ -102,9 +102,13 @@ PROMPT='(%*) [%n@%m %~]$ '
 # Make the computer/server cache a lot of files when a new terminal is opened
 (tree &) > /dev/null
 
-# Built-in completion
+# Completion
 autoload compinit && compinit
+fpath=(/opt/vagrant/embedded/gems/gems/vagrant-2.4.9/contrib/zsh $fpath) # Vagrant
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+if [[ $(cat /etc/hostname) == *hefaistos* ]]; then # KC (only on Hefaistos)
+    source <(kc completion zsh)
+fi
 
 # Sourcing plugins not available on UiO servers
 if [[ $(cat /etc/hostname) == *arch* ]]; then
@@ -114,12 +118,6 @@ if [[ $(cat /etc/hostname) == *arch* ]]; then
     source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
     # Vim mode
     source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-fi
-
-# KC completion (only available on KLP VM):
-
-if [[ $(cat /etc/hostname) == *hefaistos* ]]; then
-    source <(kc completion zsh)
 fi
 
 # Fix bck-i-search
@@ -142,8 +140,4 @@ bindkey "\e[F" end-of-line
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# Vagrant completion
-fpath=(/opt/vagrant/embedded/gems/gems/vagrant-2.4.9/contrib/zsh $fpath)
-compinit
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm completion
