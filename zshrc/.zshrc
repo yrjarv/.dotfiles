@@ -106,9 +106,6 @@ PROMPT='(%*) [%n@%m %~]$ '
 autoload compinit && compinit
 fpath=(/opt/vagrant/embedded/gems/gems/vagrant-2.4.9/contrib/zsh $fpath) # Vagrant
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-if [[ $(cat /etc/hostname) == *hefaistos* ]]; then # KC (only on Hefaistos)
-    source <(kc completion zsh)
-fi
 
 # Sourcing plugins not available on UiO servers
 if [[ $(cat /etc/hostname) == *arch* ]]; then
