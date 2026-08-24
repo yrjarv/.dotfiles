@@ -2,6 +2,7 @@
 hl.monitor({ -- Local monitor
     output = "eDP-1",
     mode = "preferred",
+    position = "0x0",
     scale = 1
 })
 
@@ -9,13 +10,13 @@ hl.monitor({ -- Local monitor
 hl.monitor({
     output = "desc: HP Inc. HP E243i CNK7380T7Z",
     mode = "preferred",
-    position = "auto-center-up",
+    position = "0x-1200",
     scale = 1
 })
 hl.monitor({
     output = "desc: Dell Inc. DELL U2422HE 3TRPH83",
     mode = "preferred",
-    position = "auto-center-left",
+    position = "-1080x-1200",
     transform = 3,
     scale = 1
 })
