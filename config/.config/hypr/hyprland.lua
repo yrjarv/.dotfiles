@@ -5,15 +5,19 @@ hl.monitor({ -- Local monitor
     scale = 1
 })
 
---- At home
-hl.monitor({ -- Ultrawide
-    output = "desc:Samsung Electric Company LS49C95xU HNTX102250",
-    position = "-1600x-1440",
+--- IFI
+hl.monitor({
+    output = "desc: HP Inc. HP E243i CNK7380T7Z",
+    mode = "preferred",
+    position = "auto-center-up",
     scale = 1
 })
-hl.monitor({ -- "Desktop" laptop, disabled
-    output = "desc:Chimei Innolux Corporation 0x15E7",
-    disabled = true
+hl.monitor({
+    output = "desc: Dell Inc. DELL U2422HE 3TRPH83",
+    mode = "preferred",
+    position = "auto-center-left",
+    transform = 3,
+    scale = 1
 })
 
 --- Fallback
