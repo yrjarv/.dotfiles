@@ -6,21 +6,6 @@ hl.monitor({ -- Local monitor
     scale = 1
 })
 
---- IFI
-hl.monitor({
-    output = "desc: HP Inc. HP E243i CNK7380T7Z",
-    mode = "preferred",
-    position = "0x-1200",
-    scale = 1
-})
-hl.monitor({
-    output = "desc: Dell Inc. DELL U2422HE 3TRPH83",
-    mode = "preferred",
-    position = "-1080x-1200",
-    transform = 3,
-    scale = 1
-})
-
 --- Fallback
 hl.monitor({
     output = "",
