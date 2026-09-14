@@ -27,6 +27,7 @@ function k() {
     cd ~/kalypso*"$1"*
 }
 alias ..='cd ..'
+function -() { cd - }
 
 # Listing directories
 alias lla='ll -a'
