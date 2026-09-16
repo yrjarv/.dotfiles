@@ -24,7 +24,7 @@ export MANROFFOPT="-c"
 
 # Aliases to quickly change directories
 function k() {
-    cd ~/kalypso*"$1"*
+    cd ~/kalypso-*"$1"*
 }
 alias ..='cd ..'
 function -() { cd - }
@@ -52,6 +52,7 @@ alias ttr='~/ttr/ttr' # For my own todolist script
 alias ida='/opt/ida-free-pc*/ida' # This isn't in PATH and I am too lazy to fix
 alias py='python3' # python3 takes too long to type
 alias icat='kitten icat' # To show images in Kitty
+alias kctl='kubectl' # Can't be k (cd kalypso), can't be kc, so then it's kctl
 
 # SFTP into UiO file server
 # There are two servers, sftp1.uio.no and stfp2.uio.no. With this function, I
