@@ -47,5 +47,5 @@
 [core]
     editor = nvim
 
-[includeIf "gitdir:/home/vagrant/"]
+[includeIf "gitdir:/home/yrv/"]
     path = ~/.klp-gitconfig
