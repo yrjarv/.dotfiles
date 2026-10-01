@@ -46,6 +46,9 @@ alias hypr='start-hyprland'
 alias n='nvim'
 alias nconf='cd ~/.nvim/config/.config/nvim'
 
+# Zoxide
+eval "$(zoxide init zsh)"
+
 # Programs
 alias todo='~/todo/todo.py' # For my own todolist script
 alias ttr='~/ttr/ttr' # For my own todolist script
@@ -136,6 +139,8 @@ bindkey "\e[4~" end-of-line
 bindkey "\e[H" beginning-of-line
 bindkey "\e[F" end-of-line
 
+# Node export stuff
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm completion
+export NODE_OPTIONS=--use-openssl-ca
