@@ -109,7 +109,7 @@ fpath=(/opt/vagrant/embedded/gems/gems/vagrant-2.4.9/contrib/zsh $fpath) # Vagra
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # Sourcing plugins not available on UiO servers
-if [[ $(cat /etc/hostname) == *arch* ]]; then
+if [[ $(cat /etc/hostname) == *arch* || $(whoami) == *yrv* ]]; then # Arch or KLP WSL
     # Syntax highlighting
     source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
     # Completion
