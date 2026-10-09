@@ -46,7 +46,6 @@
 
 [core]
     editor = nvim
-    autocrlf = true
 
 [includeIf "gitdir:/home/yrv/"]
     path = ~/.klp-gitconfig
