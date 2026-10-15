@@ -15,7 +15,6 @@ set encoding=utf-8
 set noswapfile
 
 set colorcolumn=80
-set textwidth=80
 set formatoptions+=t
 
 set scrolloff=7
