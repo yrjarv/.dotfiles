@@ -7,11 +7,9 @@ export PATH=.:~/.binaries/bin:/opt/kalypso/bin:$PATH
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
-# Aliases that won't work on UiO servers
+# Important aliases requiring other programs to be installed
 alias ll='eza -lghT --git-repos --git -L=1 --icons --hyperlink\
 	--group-directories-first'
-
-# Important aliases requiring other programs to be installed
 alias tree='ll -L=10'
 alias cat='bat --style=plain --paging=always'
 alias codecat='bat --style=plain -n'
